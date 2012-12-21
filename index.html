@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Learning Twitter Bootstrap</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span2" id="side-column">
+                <div class="btn-group">
+                    <button class="btn">A</button>
+                </div>
+            </div>
+            <div class="span10" id="main-container">
+                <div class="row">
+                    <div class="span4 offset1">
+                        <div class="btn-group">
+                            <button class="btn" id="addrow">Add Another Row</button>
+                        </div>
+                    </div>
+                    <div class="span4 offser2">
+                        <div class="btn-group">
+                            <button class="btn">Delete Above Row</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script type="text/javascript" src="builder/jquery.min.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function  ($) {//prevent conflicts
+        //Global Variables
+        var $container = $('#main-container');
+        var rowhtml = '<div class="row"></div>';
+        $('#addrow').on('click',function  () {
+
+            console.log('Add Row Clicked');
+        });
+    });
+</script>
+</body>
+</html>

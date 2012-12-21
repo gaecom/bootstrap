@@ -1,0 +1,1181 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"eho",
+				"echo	echo \"…\""
+			],
+			[
+				"c",
+				"cnl	console"
+			],
+			[
+				"re",
+				"require"
+			],
+			[
+				"req",
+				"request"
+			],
+			[
+				"pe",
+				"preview-list"
+			],
+			[
+				"the",
+				"theFile"
+			],
+			[
+				"fun",
+				"fun	Function"
+			],
+			[
+				"if",
+				"ife	if … else"
+			],
+			[
+				"hea",
+				"heading"
+			],
+			[
+				"in",
+				"inJSON"
+			],
+			[
+				"sto",
+				"storageObject"
+			],
+			[
+				"new",
+				"newday"
+			],
+			[
+				"str",
+				"storage"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"style",
+				"style"
+			],
+			[
+				"sty",
+				"stylesheet"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"nu",
+				"numberOfStyles"
+			],
+			[
+				"st",
+				"stylesheetArray"
+			],
+			[
+				"i",
+				"if	if"
+			],
+			[
+				"styl",
+				"styleSheet"
+			],
+			[
+				"data",
+				"dataUrl"
+			],
+			[
+				"to",
+				"toString"
+			],
+			[
+				"item",
+				"itemStorage"
+			],
+			[
+				"img",
+				"imgArray"
+			],
+			[
+				"for",
+				"for	for (…) {…}"
+			],
+			[
+				"da",
+				"dataURL"
+			],
+			[
+				"get",
+				"getBase64Image"
+			],
+			[
+				"ite",
+				"items2"
+			],
+			[
+				"tab",
+				"tabArray"
+			],
+			[
+				"quer",
+				"queryobject"
+			],
+			[
+				"t",
+				"true"
+			],
+			[
+				"ch",
+				"changeInfo"
+			],
+			[
+				"update",
+				"updateProperties"
+			],
+			[
+				"th",
+				"theHtml"
+			],
+			[
+				"ta",
+				"tabinfo"
+			],
+			[
+				"fo",
+				"for	for (…) {…}"
+			],
+			[
+				"visi",
+				"visitItem"
+			],
+			[
+				"vis",
+				"visitItem"
+			],
+			[
+				"V",
+				"VisitItem"
+			],
+			[
+				"time",
+				"timeDiff"
+			],
+			[
+				"tha",
+				"thatHost"
+			],
+			[
+				"all",
+				"allTheUrls"
+			],
+			[
+				"hos",
+				"host"
+			],
+			[
+				"that",
+				"thatHost"
+			],
+			[
+				"ur",
+				"uri"
+			],
+			[
+				"host",
+				"host"
+			],
+			[
+				"tot",
+				"totalVisits"
+			],
+			[
+				"this",
+				"thisHost"
+			],
+			[
+				"Visi",
+				"Visit"
+			],
+			[
+				"is",
+				"isItCalled"
+			],
+			[
+				"hostU",
+				"hostUrl"
+			],
+			[
+				"tim",
+				"timeOnThatSite"
+			],
+			[
+				"ti",
+				"timeDiv"
+			],
+			[
+				"Mos",
+				"MostVisitedURL"
+			],
+			[
+				"Mo",
+				"MostVisitedURL"
+			],
+			[
+				"url",
+				"urlToCount"
+			],
+			[
+				"his",
+				"historyItems"
+			],
+			[
+				"p",
+				"php"
+			],
+			[
+				"e",
+				"element"
+			],
+			[
+				"dr",
+				"draggable"
+			],
+			[
+				"drag",
+				"draggable"
+			],
+			[
+				"add",
+				"addimage"
+			],
+			[
+				"image",
+				"imageupload"
+			],
+			[
+				"drop",
+				"dropfile"
+			],
+			[
+				"rea",
+				"realData"
+			],
+			[
+				"uplo",
+				"uploaded-files"
+			],
+			[
+				"up",
+				"uploaded-files"
+			],
+			[
+				"res",
+				"restartFiles"
+			],
+			[
+				"de",
+				"delete"
+			],
+			[
+				"file",
+				"file-list"
+			],
+			[
+				"windo",
+				"window"
+			],
+			[
+				"Up",
+				"Uploading"
+			],
+			[
+				"load",
+				"loading-content"
+			],
+			[
+				"lo",
+				"loading-color"
+			],
+			[
+				"le",
+				"length"
+			],
+			[
+				"dat",
+				"dataArray"
+			],
+			[
+				"fil",
+				"fileReader"
+			],
+			[
+				"File",
+				"fileReader"
+			],
+			[
+				"dis",
+				"display"
+			],
+			[
+				"max",
+				"maxFiles"
+			],
+			[
+				"tht",
+				"thatslide"
+			],
+			[
+				"dif",
+				"diffx"
+			],
+			[
+				"over",
+				"overlay"
+			],
+			[
+				"slide",
+				"slide"
+			],
+			[
+				"o",
+				"overlay"
+			],
+			[
+				"pa",
+				"parent"
+			],
+			[
+				"hover",
+				"hovered"
+			],
+			[
+				"ad",
+				"addelement"
+			],
+			[
+				"ed",
+				"editInPlace"
+			],
+			[
+				"inviews",
+				"inviewslide"
+			],
+			[
+				"sor",
+				"sortable"
+			],
+			[
+				"of",
+				"offsetleft"
+			],
+			[
+				"ui",
+				"ui-state-default"
+			],
+			[
+				"addt",
+				"addtoolbox"
+			],
+			[
+				"invi",
+				"inviewli"
+			],
+			[
+				"inv",
+				"inviewli"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"off",
+				"offset"
+			],
+			[
+				"top",
+				"top"
+			],
+			[
+				"bo",
+				"border"
+			],
+			[
+				"option",
+				"options"
+			],
+			[
+				"size",
+				"sizey"
+			],
+			[
+				"wid",
+				"widthslider"
+			],
+			[
+				"edi",
+				"editable"
+			],
+			[
+				"fin",
+				"find"
+			],
+			[
+				"h",
+				"height"
+			],
+			[
+				"en",
+				"enable"
+			],
+			[
+				"ca",
+				"camera"
+			],
+			[
+				"righ",
+				"rightClick"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"lef",
+				"leftoffset"
+			],
+			[
+				"next",
+				"nextprev"
+			],
+			[
+				"ro",
+				"rotate"
+			],
+			[
+				"scale",
+				"scaleby"
+			],
+			[
+				"inview",
+				"inviewscale"
+			],
+			[
+				"scal",
+				"scaleby"
+			],
+			[
+				"sca",
+				"scaleby"
+			],
+			[
+				"tran",
+				"transition"
+			],
+			[
+				"roa",
+				"rotateby"
+			],
+			[
+				"tr",
+				"transition"
+			],
+			[
+				"sta",
+				"static"
+			],
+			[
+				"bor",
+				"border"
+			],
+			[
+				"diff",
+				"diffy"
+			],
+			[
+				"di",
+				"diffx"
+			],
+			[
+				"g",
+				"gcentery"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "css/bootstrap.css",
+			"settings":
+			{
+				"buffer_size": 124223,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <title>Learning Twitter Bootstrap</title>\n\n    <link href=\"css/bootstrap.min.css\" rel=\"stylesheet\">\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"index.css\">\n</head>\n<body>\n    <div class=\"container-fluid\">\n        <div class=\"row-fluid\">\n            <div class=\"span2\" id=\"side-column\">\n                <div class=\"btn-group\">\n                    <button class=\"btn\">A</button>\n                </div>\n            </div>\n            <div class=\"span10\" id=\"main-container\">\n                <div class=\"row\">\n                    <div class=\"span4 offset1\">\n                        <div class=\"btn-group\">\n                            <button class=\"btn\" id=\"addrow\">Add Another Row</button>\n                        </div>\n                    </div>\n                    <div class=\"span4 offser2\">\n                        <div class=\"btn-group\">\n                            <button class=\"btn\">Delete Above Row</button>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n<script type=\"text/javascript\" src=\"builder/jquery.min.js\"></script>\n<script type=\"text/javascript\">\n    jQuery(document).ready(function  ($) {//prevent conflict\n        var container = $('#main-container');\n        var \n    });\n</script>\n</body>\n</html>",
+			"file": "index.html",
+			"file_size": 1383,
+			"file_write_time": 130005851128092921,
+			"settings":
+			{
+				"buffer_size": 1344,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "index.css",
+			"settings":
+			{
+				"buffer_size": 386,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "builderfull.html",
+			"settings":
+			{
+				"buffer_size": 31635,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "builder/builder.css",
+			"settings":
+			{
+				"buffer_size": 15720,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "Packages/User/C.sublime-build",
+	"command_palette":
+	{
+		"height": 81.0,
+		"selected_items":
+		[
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"pa",
+				"Package Control: Discover Packages"
+			],
+			[
+				"p",
+				"Package Control: Install Package"
+			],
+			[
+				"d",
+				"Set Syntax: Diff"
+			],
+			[
+				"",
+				"Set Syntax: Graphviz (DOT)"
+			],
+			[
+				"Snippet: ",
+				"Snippet: Function"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 656.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/H/bootstrap/index.css",
+		"/H/node/hello/helloworld/app.js",
+		"/H/xampp/htdocs/xampp/projects/wordpress/wp-content/themes/twentytwelve/page-templates/football.php",
+		"/H/node/jsonapi/express/app.js",
+		"/C/Users/Kanakiya/Desktop/blank.html",
+		"/C/Users/Kanakiya/AppData/Roaming/Sublime Text 2/Packages/User/console.sublime-snippet",
+		"/H/twitter/trial.html",
+		"/H/node/socket-io/index.html",
+		"/H/node/socket-io/app.js",
+		"/H/node/redirects/app.js",
+		"/H/node/redirects/package.json",
+		"/H/imp-info/pay.txt",
+		"/H/node/redirects/log.txt",
+		"/H/node/redirects/node_modules/follow-redirects/test/index.js",
+		"/H/twitter/test.json",
+		"/C/Users/Kanakiya/Documents/bookmarks_12_18_12.html",
+		"/H/twitter/trial2.html",
+		"/H/twitter/style.css",
+		"/H/twitter/filereader/index.html",
+		"/H/twitter/index.html",
+		"/H/twitter/filedrag.js",
+		"/H/twitter/twitter.css",
+		"/H/xampp/htdocs/xampp/projects/test.html",
+		"/H/node/hello/helloworld/test.html",
+		"/H/node/hello/helloworld/index.html",
+		"/H/node/hello/helloworld/views/index.jade",
+		"/H/node/hello/helloworld/views/layout.jade",
+		"/H/cordova-underling-master/underling.js",
+		"/H/cordova-underling-master/index.html",
+		"/H/node/hello/helloworld/firebase-node.js",
+		"/H/node/hello/helloworld/bin/server.js",
+		"/H/node/hello/helloworld/APIkey",
+		"/H/node/express/views/layout.jade",
+		"/H/node/express/routes/index.js",
+		"/H/node/hello/helloworld/npm-debug.log",
+		"/H/node/hello/helloworld/bin/server",
+		"/H/node/express/app.js",
+		"/H/node/helloredis/server.js",
+		"/H/node/helloredis/config/config.json",
+		"/H/node/helloredis/config/config.schema",
+		"/H/node/helloredis/package.json",
+		"/H/node/hello/helloworld/bin/server2.js",
+		"/H/node/hello/helloworld/package.json",
+		"/H/node/hello/helloworld/config/config.json",
+		"/H/node/hello/helloworld/config/config.schema",
+		"/H/xampp/htdocs/xampp/projects/XML-sitemap/test.php.txt",
+		"/H/node/hello/helloworld/node_modules/socket.io/app.js",
+		"/H/node/hello/helloworld/node_modules/socket.io/package.json",
+		"/H/node/hello/helloworld/node_modules/socket.io/index.js",
+		"/H/node/hello/helloworld/ReadMe.md",
+		"/H/node/hello/helloworld/node_modules/nodeapps-helloworld/package.json",
+		"/H/imp-info/Pan.txt",
+		"/H/imp-info/password.txt",
+		"/H/jquery-pugin/jquery.transit.min.js",
+		"/H/jquery-pugin/style.css",
+		"/H/jquery-pugin/index.html",
+		"/H/my-chrome-extension/one-line/manifest.json",
+		"/H/my-chrome-extension/one-line/extension.css",
+		"/C/Users/Kanakiya/Downloads/VHDL/pr.vhd",
+		"/C/Users/Kanakiya/Downloads/VHDL/ram.vhd",
+		"/C/Users/Kanakiya/Downloads/VHDL/ram3.vhd",
+		"/C/Users/Kanakiya/Downloads/VHDL/shrg.vhd",
+		"/C/Users/Kanakiya/Downloads/VHDL/moore.vhd",
+		"/C/Users/Kanakiya/Downloads/VHDL/mux4.vhd",
+		"/C/Users/Kanakiya/Downloads/jquerin.wordpress.2012-11-28.xml",
+		"/H/offline-chrome-extension/manifest.json",
+		"/H/my-chrome-extension/hide/extension.css",
+		"/H/my-chrome-extension/hide/manifest.json",
+		"/H/offline-chrome-extension/inject.js",
+		"/H/melange/remotehost/wp-content/themes/twentytwelve/frontenddevwiki/README.md",
+		"/H/offline-chrome-extension/popup.js",
+		"/H/offline-chrome-extension/redirect.html",
+		"/H/offline-chrome-extension/extension.css",
+		"/C/Users/Kanakiya/Downloads/Untitled/Untitled.json",
+		"/H/offline-chrome-extension/redirect.js",
+		"/H/offline-chrome-extension.pem",
+		"/H/offline-chrome-extension/popup.html",
+		"/H/offline-chrome-extension/popup.css",
+		"/H/offline-chrome-extension/.git/info/exclude",
+		"/H/Analytics-chrome-extension/analytics.js",
+		"/H/offline-chrome-extension/validator-min.js",
+		"/H/xampp/htdocs/xampp/projects/builder/test.html",
+		"/H/offline-chrome-extension/test.html",
+		"/C/Users/Kanakiya/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/H/offline-chrome-extension/background.js",
+		"/C/Users/Kanakiya/Downloads/basic/manifest.json",
+		"/C/Users/Kanakiya/Downloads/basic/navigation_collector.js",
+		"/H/offline-chrome-extension/timer/manifest.json",
+		"/H/offline-chrome-extension/timer/popup.js",
+		"/H/offline-chrome-extension/timer/page.js",
+		"/C/Users/Kanakiya/AppData/Local/Temp/Temp1_make_page_red.zip/make_page_red/background.js",
+		"/C/Users/Kanakiya/AppData/Local/Temp/Temp1_make_page_red.zip/make_page_red/manifest.json",
+		"/H/offline-chrome-extension/stylizr/options.js",
+		"/H/Chrome-Extensions-examples/contentSettings/popup.js",
+		"/H/offline-chrome-extension/stylizr/popup.js",
+		"/H/Analytics-chrome-extension/inject.js",
+		"/H/Chrome-Extensions-examples/make_page_red/manifest.json",
+		"/H/Analytics-chrome-extension/manifest.json",
+		"/H/offline-chrome-extension",
+		"/H/index.html",
+		"/H/Near-field-communication/info.txt",
+		"/C/Users/Kanakiya/Downloads/videocacheview-x64/readme.txt",
+		"/H/node/nodetube/node_modules/jsdom/status.json",
+		"/H/Chrome-Extensions-examples/stylizr/options.js",
+		"/H/Chrome-Extensions-examples/stylizr/popup.js",
+		"/H/Chrome-Extensions-examples/showHistory/typedUrls.js",
+		"/H/Analytics-chrome-extension/background.html",
+		"/H/Chrome-Extensions-examples/gildas-lormeau-SingleFile-d154e92/WebContent/core/scripts/bg/nio.js",
+		"/H/Chrome-Extensions-examples/gildas-lormeau-SingleFile-d154e92/WebContent/core/scripts/bg/wininfo.js",
+		"/H/Chrome-Extensions-examples/gildas-lormeau-SingleFile-d154e92/WebContent/core/manifest.json",
+		"/H/Chrome-Extensions-examples/gildas-lormeau-SingleFile-d154e92/WebContent/core/scripts/bg/bgcore.js",
+		"/H/Chrome-Extensions-examples/gildas-lormeau-SingleFile-d154e92/WebContent/COPYING",
+		"/H/Chrome-Extensions-examples/gildas-lormeau-SingleFile-d154e92/README",
+		"/H/Analytics-chrome-extension/popup.html",
+		"/H/chrome-extension/README.md",
+		"/H/Chrome-Extensions-examples/medialize-URI.js-v1.7.2-0-g1f6d64b/medialize-URI.js-1f6d64b/src/IPv6.js",
+		"/H/Chrome-Extensions-examples/showHistory/typedUrls.html",
+		"/H/chrome-extension/manifest.json",
+		"/H/Chrome-Extensions-examples/showHistory/manifest.json",
+		"/H/chrome-extension/content_script.js",
+		"/H/chrome-extension/popup.js",
+		"/H/chrome-extension/jquery.min.js",
+		"/H/Chrome-Extensions-examples/basic/sample.js",
+		"/H/chrome-extension/inject.js",
+		"/H/Chrome-Extensions-examples/make_page_red/background.js",
+		"/H/Chrome-Extensions-examples/set_page_color/popup.html",
+		"/H/chrome-extension/popup.html",
+		"/H/chrome-extension/background.js"
+	],
+	"find":
+	{
+		"height": 58.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"Fathom-js",
+			"Snow",
+			"//",
+			"ClassySocial",
+			"QuickFlip",
+			"Fathom-js",
+			"JAO file tree",
+			"elem is the jQuery element, type contains ‘dir’ or ‘file’ according to file type, file contains the path to the file",
+			"Default",
+			"Fathom-js",
+			"img",
+			"url",
+			"Map Marker",
+			"rCarousel",
+			"Fathom-js",
+			"id",
+			"Stacktable",
+			"Regex",
+			"Fathom-js",
+			"<li",
+			"none",
+			"string",
+			"float",
+			"Fathom-js",
+			"box2d",
+			"/*",
+			"Live-Address",
+			"Pkg-js",
+			"Fancydropdown",
+			"Fathom-js",
+			"Default",
+			"ayaSlider",
+			"bounceThis",
+			"plax",
+			"Before-After",
+			"Apprise",
+			"animateText-js",
+			"ayaSlider",
+			"Photobooth-js",
+			"SlickQuiz",
+			"Boolean",
+			"App Folders",
+			"TubePlayer",
+			"WikiUp",
+			"jsMovie",
+			"Aware-js",
+			"Aware",
+			"jFlickrFeed",
+			"Fatpixels js",
+			"Boxer",
+			"ayaSlider",
+			"yahoo",
+			"Long Press",
+			"jHere",
+			"SlickSwitch",
+			"( ) { }",
+			"ayaSlider",
+			"TextFit",
+			"textFit",
+			"//",
+			"Complexify",
+			"Volley",
+			"jPanelMenu",
+			"Autotab",
+			"table",
+			"NFC tag",
+			"•",
+			"ps",
+			"scale",
+			"console",
+			"</code",
+			"strong",
+			"Autotab",
+			"stylesheet",
+			"Maximage-2",
+			"Currencyr",
+			"Autotab",
+			"impressR",
+			"Autotab",
+			"<strong>",
+			"WideText",
+			"Jarallax javascript library",
+			"Autotab",
+			"Tappable javascript",
+			"Sequence-js jQuery",
+			"VisualSearch",
+			"Animated Emoticons",
+			"Diva-js | AJAX",
+			"getV",
+			"/*",
+			"Diva-js | AJAX",
+			"round",
+			"// ",
+			"Fresco lightbox",
+			"Responsive Measures | typography jquery plugin",
+			"Y",
+			"type",
+			"Rslider",
+			"Diva-js | AJAX jQuery plugin",
+			"url",
+			"urlToCount",
+			"Virtual Piano Chords",
+			"Diva-js | AJAX",
+			"host",
+			"$(this)",
+			"Prefix-free",
+			"Bonsai-js",
+			"GuessLanguage",
+			"Vintage",
+			"Add a vintage effect to images",
+			"Adapt-js",
+			"Pagify",
+			"Diva",
+			"url",
+			"({\n",
+			"processVisits",
+			"|",
+			"Diva-js | AJAX jQuery plugin",
+			"chrome.history",
+			"buildTypedUrlList",
+			"Diva-js | AJAX",
+			"transition",
+			"dragit",
+			"pep",
+			"editable",
+			"<div class=\"options\"></div>",
+			"sortable",
+			"sortableul"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"jaykanakiya.co.cc",
+			"&lt;",
+			"",
+			"p",
+			"self",
+			"\"number\":null,",
+			"mobile\":null,",
+			"number\":null,",
+			"email",
+			"head_relation",
+			"dob",
+			"srno",
+			"left",
+			"windowsdiv",
+			"windows",
+			"inviewleft",
+			"",
+			"windows",
+			"</div>",
+			"<div>",
+			"\"></div></li>",
+			"<li><div><img",
+			"top:300",
+			"left:225",
+			"",
+			"225",
+			"300",
+			".png\" width=\"300\" height=\"225\"",
+			".png",
+			"/sliding/slide",
+			"slide",
+			".jpg",
+			"slide_caption",
+			"slide",
+			" ",
+			",250,",
+			"$(this).data('k',temp);",
+			"nav",
+			"Kapol",
+			"kapol",
+			"kapols",
+			"inserts",
+			"",
+			"<td class=\"\">",
+			"page",
+			"000webhost",
+			"+changex,y",
+			"jpg",
+			"posy",
+			"posx",
+			"selecrBrick",
+			"bricks",
+			"ctx",
+			"mosaic-backdrop",
+			"h5",
+			"h4"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "css/bootstrap.css",
+					"settings":
+					{
+						"buffer_size": 124223,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 148047.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 1344,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1310,
+								1310
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 600.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "index.css",
+					"settings":
+					{
+						"buffer_size": 386,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								384,
+								384
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "builderfull.html",
+					"settings":
+					{
+						"buffer_size": 31635,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8118,
+								8050
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 5193.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "builder/builder.css",
+					"settings":
+					{
+						"buffer_size": 15720,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1076,
+								1085
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 36.0
+	},
+	"input":
+	{
+		"height": 43.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": false,
+	"output.exec":
+	{
+		"height": 148.0
+	},
+	"replace":
+	{
+		"height": 68.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/H/node/nodetube/nodetube.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 322.0,
+	"status_bar_visible": true
+}
