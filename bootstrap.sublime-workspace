@@ -4,16 +4,36 @@
 		"selected_items":
 		[
 			[
+				"add",
+				"addcolumn"
+			],
+			[
+				"in",
+				"inControlBox"
+			],
+			[
+				"if",
+				"ife	if … else"
+			],
+			[
+				"row",
+				"rowoptions"
+			],
+			[
+				"ins",
+				"inselection"
+			],
+			[
+				"c",
+				"click"
+			],
+			[
 				"con",
 				"container"
 			],
 			[
 				"fir",
 				"firstRow"
-			],
-			[
-				"if",
-				"if	if"
 			],
 			[
 				"option",
@@ -44,16 +64,8 @@
 				"btn-group"
 			],
 			[
-				"row",
-				"rowhtml"
-			],
-			[
 				"eho",
 				"echo	echo \"…\""
-			],
-			[
-				"c",
-				"cnl	console"
 			],
 			[
 				"re",
@@ -78,10 +90,6 @@
 			[
 				"hea",
 				"heading"
-			],
-			[
-				"in",
-				"inJSON"
 			],
 			[
 				"sto",
@@ -286,10 +294,6 @@
 			[
 				"drag",
 				"draggable"
-			],
-			[
-				"add",
-				"addimage"
 			],
 			[
 				"image",
@@ -510,10 +514,6 @@
 			[
 				"tran",
 				"transition"
-			],
-			[
-				"roa",
-				"rotateby"
 			]
 		]
 	},
@@ -523,7 +523,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 2779,
+				"buffer_size": 4258,
 				"line_ending": "Windows"
 			}
 		},
@@ -531,18 +531,15 @@
 			"file": "functions.js",
 			"settings":
 			{
-				"buffer_size": 816,
+				"buffer_size": 1276,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"contents": "::-webkit-scrollbar-corner{background:transparent;display:none}\n::-webkit-scrollbar{width:8px;height:8px}\n::-webkit-scrollbar-track{background:#dbdbdb;border-radius:30px}\n::-webkit-scrollbar-thumb{border-radius:30px;background:#ababab;-webkit-box-shadow:none}\nbody{overflow-x:hidden;;background: url(builder/tiny_grid.png) repeat white;}\n#uppermargin{\n    background-color: transparent;\n    min-height: 75px;\n}\n#main-container{\n    background-color: white;\n}\n#rowoptions{\n    display: none;\n    position: absolute;\n    top: 0;\n    left: 0;\n    overflow: hidden;\n    min-height: 60px;\n    width: 80%;\n    margin: 1%; \n}\n.row{\n    min-height: 200px;\n    background-color: #ccc;\n}\n.span1{\n    background-color: gray;\n}\n.span2{\n    background-color: gray;\n}",
 			"file": "index.css",
-			"file_size": 783,
-			"file_write_time": 130006534887762508,
 			"settings":
 			{
-				"buffer_size": 753,
+				"buffer_size": 912,
 				"line_ending": "Windows"
 			}
 		},
@@ -566,12 +563,24 @@
 	"build_system": "Packages/User/C.sublime-build",
 	"command_palette":
 	{
-		"height": 104.0,
+		"height": 392.0,
 		"selected_items":
 		[
 			[
+				"git",
+				"Git: Commit history"
+			],
+			[
 				"pac",
-				"Preferences: Browse Packages"
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"pa",
+				"Package Control: Discover Packages"
 			],
 			[
 				"rem",
@@ -584,14 +593,6 @@
 			[
 				"remove",
 				"Package Control: Remove Package"
-			],
-			[
-				"ins",
-				"Package Control: Install Package"
-			],
-			[
-				"pa",
-				"Package Control: Discover Packages"
 			],
 			[
 				"p",
@@ -610,7 +611,7 @@
 				"Snippet: Function"
 			]
 		],
-		"width": 392.0
+		"width": 416.0
 	},
 	"console":
 	{
@@ -973,7 +974,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -981,15 +982,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 2779,
+						"buffer_size": 4258,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								224,
-								834
+								744,
+								744
 							]
 						],
 						"settings":
@@ -1010,15 +1011,15 @@
 					"file": "functions.js",
 					"settings":
 					{
-						"buffer_size": 816,
+						"buffer_size": 1276,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								190,
-								190
+								950,
+								950
 							]
 						],
 						"settings":
@@ -1028,7 +1029,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 75.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1038,15 +1039,15 @@
 					"file": "index.css",
 					"settings":
 					{
-						"buffer_size": 753,
+						"buffer_size": 912,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								616,
-								616
+								547,
+								547
 							]
 						],
 						"settings":
@@ -1056,7 +1057,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 150.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1154,6 +1155,10 @@
 	"output.exec":
 	{
 		"height": 148.0
+	},
+	"output.git":
+	{
+		"height": 160.0
 	},
 	"replace":
 	{

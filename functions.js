@@ -10,7 +10,7 @@ function changeWidthThroughClass ($element,className,isIncrease) {
         if (lastNumber!==1) {
             lastNumber = lastNumber - 1;
         } else{
-            console.log('Cannot be Decreased Further . Deleing the element');
+            console.log('Cannot be Decreased Further . Deleting the element');
             //function for deleting the element
         };
     };

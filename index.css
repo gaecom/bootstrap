@@ -7,12 +7,15 @@ body{overflow-x:hidden;;background: url(builder/tiny_grid.png) repeat white;}
     background-color: transparent;
     min-height: 75px;
 }
+.dropdown-menu{
+}
 #main-container{
     background-color: white;
 }
-#rowoptions{
+#rowoptions,#coloptions{
     display: none;
-    position: absolute;
+    z-index: 9999;
+    position: fixed;
     top: 0;
     left: 0;
     overflow: hidden;
@@ -23,16 +26,16 @@ body{overflow-x:hidden;;background: url(builder/tiny_grid.png) repeat white;}
 #rowoptions>.row{
     background-color: darkgrey;
 }
-.row{
-    min-height: 200px;
+.row-fluid{
+    min-height: 30px;
     background-color: #ccc;
 }
-.span1{
-    background-color: gray;
-}
-.span2{
-    background-color: gray;
+.row-fluid [class*="span"]{
+    background-color: darkgrey;
 }
 .inselection{
     -webkit-box-shadow: inset 2px 0px 0px 15px lightBlue;
+}
+.row-fluid [class*="span"]:first-child {
+margin-left: 0;
 }
