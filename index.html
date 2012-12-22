@@ -74,11 +74,13 @@ var inSelectionObject = {};
             $('#addrowabove').on('click',function  () {
                 var $row = $(this);
                 $(rowhtml).insertBefore(inSelectionObject.row);
+                inControlBox(inSelectionObject.row.prev('.row'));
                 console.log('Added row Above');
             });
             $('#addrowbelow').on('click',function  () {
                 var $row = $(this);
                 $(rowhtml).insertAfter(inSelectionObject.row);
+                inControlBox(inSelectionObject.row.next('.row'));
                 console.log('Added Row Below');
             });
             $('#deleterow').on('click',function  () {

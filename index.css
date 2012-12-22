@@ -20,6 +20,9 @@ body{overflow-x:hidden;;background: url(builder/tiny_grid.png) repeat white;}
     width: 80%;
     margin: 1%;
 }
+#rowoptions>.row{
+    background-color: darkgrey;
+}
 .row{
     min-height: 200px;
     background-color: #ccc;
