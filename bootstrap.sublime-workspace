@@ -4,6 +4,50 @@
 		"selected_items":
 		[
 			[
+				"con",
+				"container"
+			],
+			[
+				"fir",
+				"firstRow"
+			],
+			[
+				"if",
+				"if	if"
+			],
+			[
+				"option",
+				"optionJSON"
+			],
+			[
+				"opt",
+				"optionData"
+			],
+			[
+				"get",
+				"getJSON"
+			],
+			[
+				"json",
+				"jsonData"
+			],
+			[
+				"js",
+				"jsonData"
+			],
+			[
+				"str",
+				"stringData"
+			],
+			[
+				"btn",
+				"btn-group"
+			],
+			[
+				"row",
+				"rowhtml"
+			],
+			[
 				"eho",
 				"echo	echo \"…\""
 			],
@@ -32,10 +76,6 @@
 				"fun	Function"
 			],
 			[
-				"if",
-				"ife	if … else"
-			],
-			[
 				"hea",
 				"heading"
 			],
@@ -50,14 +90,6 @@
 			[
 				"new",
 				"newday"
-			],
-			[
-				"str",
-				"storage"
-			],
-			[
-				"con",
-				"console"
 			],
 			[
 				"bac",
@@ -118,10 +150,6 @@
 			[
 				"da",
 				"dataURL"
-			],
-			[
-				"get",
-				"getBase64Image"
 			],
 			[
 				"ite",
@@ -416,10 +444,6 @@
 				"border"
 			],
 			[
-				"option",
-				"options"
-			],
-			[
 				"size",
 				"sizey"
 			],
@@ -490,59 +514,35 @@
 			[
 				"roa",
 				"rotateby"
-			],
-			[
-				"tr",
-				"transition"
-			],
-			[
-				"sta",
-				"static"
-			],
-			[
-				"bor",
-				"border"
-			],
-			[
-				"diff",
-				"diffy"
-			],
-			[
-				"di",
-				"diffx"
-			],
-			[
-				"g",
-				"gcentery"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "css/bootstrap.css",
-			"settings":
-			{
-				"buffer_size": 124223,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <title>Learning Twitter Bootstrap</title>\n\n    <link href=\"css/bootstrap.min.css\" rel=\"stylesheet\">\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"index.css\">\n</head>\n<body>\n    <div class=\"container-fluid\">\n        <div class=\"row-fluid\">\n            <div class=\"span2\" id=\"side-column\">\n                <div class=\"btn-group\">\n                    <button class=\"btn\">A</button>\n                </div>\n            </div>\n            <div class=\"span10\" id=\"main-container\">\n                <div class=\"row\">\n                    <div class=\"span4 offset1\">\n                        <div class=\"btn-group\">\n                            <button class=\"btn\" id=\"addrow\">Add Another Row</button>\n                        </div>\n                    </div>\n                    <div class=\"span4 offser2\">\n                        <div class=\"btn-group\">\n                            <button class=\"btn\">Delete Above Row</button>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n<script type=\"text/javascript\" src=\"builder/jquery.min.js\"></script>\n<script type=\"text/javascript\">\n    jQuery(document).ready(function  ($) {//prevent conflict\n        var container = $('#main-container');\n        var \n    });\n</script>\n</body>\n</html>",
 			"file": "index.html",
-			"file_size": 1383,
-			"file_write_time": 130005851128092921,
 			"settings":
 			{
-				"buffer_size": 1344,
+				"buffer_size": 2779,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "index.css",
+			"file": "functions.js",
 			"settings":
 			{
-				"buffer_size": 386,
+				"buffer_size": 816,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "::-webkit-scrollbar-corner{background:transparent;display:none}\n::-webkit-scrollbar{width:8px;height:8px}\n::-webkit-scrollbar-track{background:#dbdbdb;border-radius:30px}\n::-webkit-scrollbar-thumb{border-radius:30px;background:#ababab;-webkit-box-shadow:none}\nbody{overflow-x:hidden;;background: url(builder/tiny_grid.png) repeat white;}\n#uppermargin{\n    background-color: transparent;\n    min-height: 75px;\n}\n#main-container{\n    background-color: white;\n}\n#rowoptions{\n    display: none;\n    position: absolute;\n    top: 0;\n    left: 0;\n    overflow: hidden;\n    min-height: 60px;\n    width: 80%;\n    margin: 1%; \n}\n.row{\n    min-height: 200px;\n    background-color: #ccc;\n}\n.span1{\n    background-color: gray;\n}\n.span2{\n    background-color: gray;\n}",
+			"file": "index.css",
+			"file_size": 783,
+			"file_write_time": 130006534887762508,
+			"settings":
+			{
+				"buffer_size": 753,
 				"line_ending": "Windows"
 			}
 		},
@@ -566,9 +566,13 @@
 	"build_system": "Packages/User/C.sublime-build",
 	"command_palette":
 	{
-		"height": 81.0,
+		"height": 104.0,
 		"selected_items":
 		[
+			[
+				"pac",
+				"Preferences: Browse Packages"
+			],
 			[
 				"rem",
 				"Package Control: Remove Package"
@@ -606,7 +610,7 @@
 				"Snippet: Function"
 			]
 		],
-		"width": 400.0
+		"width": 392.0
 	},
 	"console":
 	{
@@ -623,6 +627,11 @@
 	},
 	"file_history":
 	[
+		"/H/bootstrap/css/bootstrap.css",
+		"/H/bootstrap/string.json",
+		"/H/bootstrap/options.json",
+		"/H/xampp/htdocs/xampp/projects/bootstrap/index.html",
+		"/H/xampp/htdocs/xampp/projects/bootstrap/index.css",
 		"/H/bootstrap/index.css",
 		"/H/node/hello/helloworld/app.js",
 		"/H/xampp/htdocs/xampp/projects/wordpress/wp-content/themes/twentytwelve/page-templates/football.php",
@@ -745,12 +754,7 @@
 		"/H/chrome-extension/content_script.js",
 		"/H/chrome-extension/popup.js",
 		"/H/chrome-extension/jquery.min.js",
-		"/H/Chrome-Extensions-examples/basic/sample.js",
-		"/H/chrome-extension/inject.js",
-		"/H/Chrome-Extensions-examples/make_page_red/background.js",
-		"/H/Chrome-Extensions-examples/set_page_color/popup.html",
-		"/H/chrome-extension/popup.html",
-		"/H/chrome-extension/background.js"
+		"/H/Chrome-Extensions-examples/basic/sample.js"
 	],
 	"find":
 	{
@@ -974,55 +978,57 @@
 			[
 				{
 					"buffer": 0,
-					"file": "css/bootstrap.css",
+					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 124223,
+						"buffer_size": 2779,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								224,
+								834
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 2,
+							"auto_name": "",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 148047.0,
+						"translation.y": 75.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "index.html",
+					"file": "functions.js",
 					"settings":
 					{
-						"buffer_size": 1344,
+						"buffer_size": 816,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1310,
-								1310
+								190,
+								190
 							]
 						],
 						"settings":
 						{
-							"auto_name": "",
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 600.0,
+						"translation.y": 75.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1032,20 +1038,22 @@
 					"file": "index.css",
 					"settings":
 					{
-						"buffer_size": 386,
+						"buffer_size": 753,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								384,
-								384
+								616,
+								616
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/CSS/CSS.tmLanguage"
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1076,7 +1084,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 5193.0,
+						"translation.y": 168.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1176,6 +1184,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 322.0,
+	"side_bar_width": 183.0,
 	"status_bar_visible": true
 }

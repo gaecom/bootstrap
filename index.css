@@ -3,7 +3,33 @@
 ::-webkit-scrollbar-track{background:#dbdbdb;border-radius:30px}
 ::-webkit-scrollbar-thumb{border-radius:30px;background:#ababab;-webkit-box-shadow:none}
 body{overflow-x:hidden;;background: url(builder/tiny_grid.png) repeat white;}
-
+#uppermargin{
+    background-color: transparent;
+    min-height: 75px;
+}
 #main-container{
     background-color: white;
+}
+#rowoptions{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    max-height: 45px;
+    width: 80%;
+    margin: 1%;
+}
+.row{
+    min-height: 200px;
+    background-color: #ccc;
+}
+.span1{
+    background-color: gray;
+}
+.span2{
+    background-color: gray;
+}
+.inselection{
+    -webkit-box-shadow: inset 2px 0px 0px 15px lightBlue;
 }

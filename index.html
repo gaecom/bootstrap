@@ -7,6 +7,23 @@
     <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 <body>
+    <div id="rowoptions">
+         <div class="row">
+                <div class="span4 offset1">
+                    <div class="btn-group">
+                        <button class="btn" id="addrowabove">Add Row Above</button>
+                        <button class="btn" id="addrowbelow">Add Row Below</button>
+                    </div>
+                </div>
+                <div class="span4 offser2">
+                    <div class="btn-group">
+                        <button class="btn" id="deleterow">Delete Above Row</button>
+                    </div>
+                        <a href="#" rel="tooltip" title="first tooltip">hover over me</a>
+                </div>
+            </div>
+    </div>
+    <div class="row" id="uppermargin"></div>
     <div class="container-fluid">
         <div class="row-fluid">
             <div class="span2" id="side-column">
@@ -15,31 +32,60 @@
                 </div>
             </div>
             <div class="span10" id="main-container">
-                <div class="row">
-                    <div class="span4 offset1">
-                        <div class="btn-group">
-                            <button class="btn" id="addrow">Add Another Row</button>
-                        </div>
-                    </div>
-                    <div class="span4 offser2">
-                        <div class="btn-group">
-                            <button class="btn">Delete Above Row</button>
-                        </div>
-                    </div>
-                </div>
+                <div class="row"></div>
             </div>
         </div>
     </div>
 <script type="text/javascript" src="builder/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript">
-    jQuery(document).ready(function  ($) {//prevent conflicts
+    var optionJSON = {
+    "popover":{
+        title : "Hey"
+    }
+}
+var stringData = {
+    "rowhtml":'<div class="row">\n<div class="span6"><div class="btn-group"><button class="btn">Add Column</button></div></div><div class="span6"></div>\n</div>'
+}
+var inSelectionObject = {};
+</script>
+<script type="text/javascript" src="functions.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function  ($) {//prevent any conflicts
         //Global Variables
-        var $container = $('#main-container');
-        var rowhtml = '<div class="row"></div>';
-        $('#addrow').on('click',function  () {
+        /*
+        After Going Live
+        $.getJSON('string.json',function  (jsonData) {
+              stringData = jsonData;
+              console.log(stringData);
+            });
+            $.getJSON('options.json',function  (data) {
+                optionData = data;
+            });
+            */
 
-            console.log('Add Row Clicked');
-        });
+            var $container = $('#main-container');
+            var rowhtml = stringData.rowhtml;
+            var firstRow = $container.children('.row');
+            $container.on('click','.row',function  () {
+                console.log('row Clicked');
+                inControlBox($(this));
+            });
+            $('#addrowabove').on('click',function  () {
+                var $row = $(this);
+                $(rowhtml).insertBefore(inSelectionObject.row);
+                console.log('Added row Above');
+            });
+            $('#addrowbelow').on('click',function  () {
+                var $row = $(this);
+                $(rowhtml).insertAfter(inSelectionObject.row);
+                console.log('Added Row Below');
+            });
+            $('#deleterow').on('click',function  () {
+                console.log('Delete Row Clicked');
+            });
+            //selectRow(firstRow);
+            //firstRow.click();
     });
 </script>
 </body>
