@@ -28,7 +28,7 @@
     </div>
     <div id="coloptions">
         <div class="row">
-            <div class="span6">
+            <div class="span7">
                  <div class="btn-group">
                     <button class="btn" id="increasewidth"><i class="icon-chevron-up"></i> Width</button>
                     <button class="btn" id="decreasewidth"><i class="icon-chevron-down"></i> Width</button>
@@ -68,10 +68,11 @@
 }
 var stringData = {
     "rowhtml":'<div class="row-fluid" data-length="0">\n</div>',
-    "colhtml1":'<div class="span1">\n</div>',
+    "colhtml1":'<div class="span1">\nspan1</div>',
     "colhtml2":'<div class="span2">\n</div>',
     "colhtml4":'<div class="span4">\n</div>',
-    "colhtml6":'<div class="span6">\n</div>'
+    "colhtml6":'<div class="span6">\n</div>',
+    "subrowhtml":'<div class="row-fluid">\n</div>'
 }
 var inSelectionObject = {};
 </script>
@@ -142,7 +143,7 @@ jQuery(document).ready(function  ($) {//prevent any conflicts
         });
         $('#increasewidth').on('click',function  () {
             changeWidthThroughClass(inSelectionObject.col,'span',true);
-            changeDataLength(inSelectionObject.row.parent(),true);
+            changeDataLength(inSelectionObject.col.parent(),true);
         });
         $('#decreasewidth').on('click',function  () {
             changeWidthThroughClass(inSelectionObject.col,'span',false);
@@ -169,6 +170,10 @@ jQuery(document).ready(function  ($) {//prevent any conflicts
             changeWidthThroughClass(inSelectionObject.col,'offset',false);
             changeDataLength(inSelectionObject.col.parent(),false);
             //function to transfer control Box to another Column
+        });
+        $('#addsubrow').on('click',function  () {
+            var subrowhtml = stringData.subrowhtml;
+            inSelectionObject.col.append(subrowhtml);
         });
         //selectRow(firstRow);
         //firstRow.click();

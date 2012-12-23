@@ -26,7 +26,7 @@ body{overflow-x:hidden;
 #rowoptions>.row{
     background-color: darkgrey;
 }
-#main-container .row-fluid{
+#main-container>.row-fluid{
     margin-bottom: 20px;
     min-height: 30px;
     margin-top: 10px;
