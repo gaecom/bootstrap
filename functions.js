@@ -1,10 +1,20 @@
-function changeWidthThroughClass ($element,isIncrease) {
+function changeWidthThroughClass ($element,classContains,isIncrease) {
     /*if (!$element.hasClass(className)) {
         console.log('Doesnt have that Class')
     };*/
-    var className = $element.attr('class').split(" ")[0];//first class
-    if (className==='inselection') {
-        className = $element.attr('class').split(" ")[1];//second class
+    var arrayposition = -1;
+    var classNames = $element.attr('class').split(" ");//Array of all Classes
+    $(classNames).each(function  (i) {
+        if (this.indexOf(classContains)!==-1) {//Contains Class
+            arrayposition = i;
+        };
+    });
+    console.log(arrayposition);
+    if (arrayposition===-1) {//The Given class is not present
+        var className = classContains+'0';
+    }
+    else{
+        var className = classNames[arrayposition];
     };
     //console.log(className);
     var lastNumber = parseInt(className[className.length-1]) ;

@@ -4,16 +4,52 @@
 		"selected_items":
 		[
 			[
-				"row",
-				"rowoptions"
+				"increas",
+				"increaseoffset"
 			],
 			[
-				"cli",
-				"Clicked"
+				"col",
+				"col"
+			],
+			[
+				"de",
+				"deletecol"
 			],
 			[
 				"in",
 				"inSelectionObject"
+			],
+			[
+				"add",
+				"addanothercol"
+			],
+			[
+				"clas",
+				"className"
+			],
+			[
+				"inc",
+				"increasewidth"
+			],
+			[
+				"ins",
+				"inSelectionObject"
+			],
+			[
+				"con",
+				"controlBox"
+			],
+			[
+				"row",
+				"rowoptions"
+			],
+			[
+				"if",
+				"if	if"
+			],
+			[
+				"cli",
+				"click"
 			],
 			[
 				"c",
@@ -26,22 +62,6 @@
 			[
 				"ad",
 				"addcol"
-			],
-			[
-				"add",
-				"addcolumn"
-			],
-			[
-				"if",
-				"ife	if … else"
-			],
-			[
-				"ins",
-				"inselection"
-			],
-			[
-				"con",
-				"container"
 			],
 			[
 				"fir",
@@ -328,10 +348,6 @@
 				"restartFiles"
 			],
 			[
-				"de",
-				"delete"
-			],
-			[
 				"file",
 				"file-list"
 			],
@@ -498,40 +514,24 @@
 			[
 				"ro",
 				"rotate"
-			],
-			[
-				"scale",
-				"scaleby"
-			],
-			[
-				"inview",
-				"inviewscale"
-			],
-			[
-				"scal",
-				"scaleby"
-			],
-			[
-				"sca",
-				"scaleby"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "index.html",
+			"file": "functions.js",
 			"settings":
 			{
-				"buffer_size": 4801,
+				"buffer_size": 2115,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "functions.js",
+			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 1277,
+				"buffer_size": 6879,
 				"line_ending": "Windows"
 			}
 		},
@@ -628,8 +628,10 @@
 	},
 	"file_history":
 	[
+		"/H/bootstrap/FortAwesome-Font-Awesome-ee55c85/css/font-awesome.css",
 		"/H/bootstrap/.gitignore",
 		"/H/bootstrap/css/bootstrap.css",
+		"/H/bootstrap/index.html",
 		"/H/bootstrap/string.json",
 		"/H/bootstrap/options.json",
 		"/H/xampp/htdocs/xampp/projects/bootstrap/index.html",
@@ -753,9 +755,7 @@
 		"/H/Chrome-Extensions-examples/showHistory/typedUrls.html",
 		"/H/chrome-extension/manifest.json",
 		"/H/Chrome-Extensions-examples/showHistory/manifest.json",
-		"/H/chrome-extension/content_script.js",
-		"/H/chrome-extension/popup.js",
-		"/H/chrome-extension/jquery.min.js"
+		"/H/chrome-extension/content_script.js"
 	],
 	"find":
 	{
@@ -974,81 +974,23 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "index.html",
-					"settings":
-					{
-						"buffer_size": 4801,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2080,
-								2080
-							]
-						],
-						"settings":
-						{
-							"auto_name": "",
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1050.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 0,
-					"file": "index.html",
-					"settings":
-					{
-						"buffer_size": 4801,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1671,
-								1671
-							]
-						],
-						"settings":
-						{
-							"auto_name": "",
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 600.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "functions.js",
 					"settings":
 					{
-						"buffer_size": 1277,
+						"buffer_size": 2115,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								919,
-								922
+								19,
+								19
 							]
 						],
 						"settings":
@@ -1059,6 +1001,34 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 6879,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6682,
+								6682
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3486.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

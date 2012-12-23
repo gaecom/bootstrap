@@ -137,10 +137,10 @@ jQuery(document).ready(function  ($) {//prevent any conflicts
             };
         });
         $('#increasewidth').on('click',function  () {
-            changeWidthThroughClass(inSelectionObject.col,true);
+            changeWidthThroughClass(inSelectionObject.col,'span',true);
         });
         $('#decreasewidth').on('click',function  () {
-            changeWidthThroughClass(inSelectionObject.col,false);
+            changeWidthThroughClass(inSelectionObject.col,'span',false);
         });
         $('#addanothercol').on('click',function  () {
             var $row = inSelectionObject.col.parent();
@@ -152,6 +152,7 @@ jQuery(document).ready(function  ($) {//prevent any conflicts
         });
         $('#increaseoffset').on('click',function  () {
             //inSelectionObject.col.remove();
+            changeWidthThroughClass(inSelectionObject.col,'offset',true)
             //function to transfer control Box to another Column
         });
         //selectRow(firstRow);
