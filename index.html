@@ -5,29 +5,38 @@
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
 </head>
 <body>
     <div id="rowoptions">
          <div class="row">
-                <div class="span10 offset2">
+                <div class="span12 offset1">
                     <div class="btn-toolbar">
                         <div class="btn-group">
-                            <button class="btn addcol" data-length="1">Add Column</button>
-                            <button class="btn addcol" data-length="2">span2</button>
-                            <button class="btn addcol" data-length="4">span4</button>
-                            <button class="btn addcol" data-length="6">span6</button>
+                            <button class="btn addcol" data-length="1"><i class="icon-plus "></i>Add Column</button>
+                            <button class="btn addcol" data-length="2"><i class="icon-plus "></i>span2</button>
+                            <button class="btn addcol" data-length="4"><i class="icon-plus "></i>span4</button>
+                            <button class="btn addcol" data-length="6"><i class="icon-plus "></i>span6</button>
                         </div>
                         <div class="btn-group">
-                            <button class="btn" id="addrowabove">Add Row Above</button>
-                            <button class="btn" id="addrowbelow">Add Row Below</button>
-                            <button class="btn" id="deleterow">Delete Selected Row</button>
+                            <button class="btn" id="addrowabove"><i class="icon-plus "></i>Add Row Above <i class="icon-caret-up"></i></button>
+                            <button class="btn" id="addrowbelow"><i class="icon-plus "></i>Add Row Below <i class="icon-caret-down"></i></button>
+                            <button class="btn" id="deleterow"><i class="icon-remove icon-large"></i> Delete Selected Row</button>
                         </div>
                     </div>
                 </div>
             </div>
     </div>
     <div id="coloptions">
-        <div class="row"></div>
+        <div class="row">
+            <div class="span6">
+                 <div class="btn-group">
+                    <button class="btn"><i class="icon-chevron-up"></i> Width</button>
+                    <button class="btn"><i class="icon-chevron-down"></i> Width</button>
+                    <button class="btn"><i class="icon-plus"></i> Add Subrow</button>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="row" id="uppermargin"></div>
     <div class="container-fluid">
@@ -82,13 +91,13 @@ jQuery(document).ready(function  ($) {//prevent any conflicts
         $('#addrowabove').on('click',function  () {
             var $row = $(this);
             $(rowhtml).insertBefore(inSelectionObject.row);
-            inControlBox(inSelectionObject.row.prev('.row-fluid'));
+            inControlBox(inSelectionObject.row.prev('.row-fluid'),'row');
             console.log('Added row Above');
         });
         $('#addrowbelow').on('click',function  () {
             var $row = $(this);
             $(rowhtml).insertAfter(inSelectionObject.row);
-            inControlBox(inSelectionObject.row.next('.row-fluid'));
+            inControlBox(inSelectionObject.row.next('.row-fluid'),'row');
             console.log('Added Row Below');
         });
         $('#deleterow').on('click',function  () {
@@ -96,10 +105,10 @@ jQuery(document).ready(function  ($) {//prevent any conflicts
 
             //If-Else Loops to check which row is in ControlBox
             if (inSelectionObject.row.next('.row-fluid').length!==0) {//If there is a row below
-                inControlBox(inSelectionObject.row.next('.row-fluid'));
+                inControlBox(inSelectionObject.row.next('.row-fluid'),'row');
             } else{
                 if (inSelectionObject.row.prev('.row').length!==0) {//If there is a row above
-                    inControlBox(inSelectionObject.row.prev('.row-fluid'));
+                    inControlBox(inSelectionObject.row.prev('.row-fluid'),'row');
                 } else{
                     //alert('You will have no rows Left');
                 };
@@ -112,13 +121,17 @@ jQuery(document).ready(function  ($) {//prevent any conflicts
             console.log(colhtml);
             inSelectionObject.row.append(colhtml);
         });
-        $container.on('click','.row-fluid',function  () {
-            console.log('row Clicked');
-            inControlBox($(this));
-        });
         $container.on('click','[class*="span"]',function  () {
-            $('#rowoptions').hide();
-            console.log('Col Clicked',$(this));
+
+            inControlBox($(this),'col');
+            console.log('Col Clicked');
+        });
+        $container.on('click','.row-fluid',function  (e) {
+            if ($(e.target).hasClass('row-fluid')) {
+
+            console.log('row Clicked');
+            inControlBox($(this),'row');
+            };
         });
         //selectRow(firstRow);
         //firstRow.click();

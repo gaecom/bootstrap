@@ -4,28 +4,40 @@
 		"selected_items":
 		[
 			[
-				"add",
-				"addcolumn"
+				"row",
+				"rowoptions"
+			],
+			[
+				"cli",
+				"Clicked"
 			],
 			[
 				"in",
-				"inControlBox"
+				"inSelectionObject"
+			],
+			[
+				"c",
+				"cnl	console"
+			],
+			[
+				"data",
+				"data-length"
+			],
+			[
+				"ad",
+				"addcol"
+			],
+			[
+				"add",
+				"addcolumn"
 			],
 			[
 				"if",
 				"ife	if … else"
 			],
 			[
-				"row",
-				"rowoptions"
-			],
-			[
 				"ins",
 				"inselection"
-			],
-			[
-				"c",
-				"click"
 			],
 			[
 				"con",
@@ -134,10 +146,6 @@
 			[
 				"styl",
 				"styleSheet"
-			],
-			[
-				"data",
-				"dataUrl"
 			],
 			[
 				"to",
@@ -396,10 +404,6 @@
 				"hovered"
 			],
 			[
-				"ad",
-				"addelement"
-			],
-			[
 				"ed",
 				"editInPlace"
 			],
@@ -510,10 +514,6 @@
 			[
 				"sca",
 				"scaleby"
-			],
-			[
-				"tran",
-				"transition"
 			]
 		]
 	},
@@ -523,7 +523,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 4258,
+				"buffer_size": 4801,
 				"line_ending": "Windows"
 			}
 		},
@@ -531,7 +531,7 @@
 			"file": "functions.js",
 			"settings":
 			{
-				"buffer_size": 1276,
+				"buffer_size": 1277,
 				"line_ending": "Windows"
 			}
 		},
@@ -539,7 +539,7 @@
 			"file": "index.css",
 			"settings":
 			{
-				"buffer_size": 912,
+				"buffer_size": 974,
 				"line_ending": "Windows"
 			}
 		},
@@ -628,6 +628,7 @@
 	},
 	"file_history":
 	[
+		"/H/bootstrap/.gitignore",
 		"/H/bootstrap/css/bootstrap.css",
 		"/H/bootstrap/string.json",
 		"/H/bootstrap/options.json",
@@ -754,8 +755,7 @@
 		"/H/Chrome-Extensions-examples/showHistory/manifest.json",
 		"/H/chrome-extension/content_script.js",
 		"/H/chrome-extension/popup.js",
-		"/H/chrome-extension/jquery.min.js",
-		"/H/Chrome-Extensions-examples/basic/sample.js"
+		"/H/chrome-extension/jquery.min.js"
 	],
 	"find":
 	{
@@ -773,6 +773,8 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"row",
+			"length",
 			"Fathom-js",
 			"Snow",
 			"//",
@@ -898,9 +900,7 @@
 			"dragit",
 			"pep",
 			"editable",
-			"<div class=\"options\"></div>",
-			"sortable",
-			"sortableul"
+			"<div class=\"options\"></div>"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -974,7 +974,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -982,15 +982,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 4258,
+						"buffer_size": 4801,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								744,
-								744
+								2080,
+								2080
 							]
 						],
 						"settings":
@@ -1001,7 +1001,36 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 75.0,
+						"translation.y": 1050.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 4801,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1671,
+								1671
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 600.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1011,15 +1040,15 @@
 					"file": "functions.js",
 					"settings":
 					{
-						"buffer_size": 1276,
+						"buffer_size": 1277,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								950,
-								950
+								919,
+								922
 							]
 						],
 						"settings":
@@ -1039,15 +1068,15 @@
 					"file": "index.css",
 					"settings":
 					{
-						"buffer_size": 912,
+						"buffer_size": 974,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								547,
-								547
+								746,
+								746
 							]
 						],
 						"settings":
@@ -1057,7 +1086,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 150.0,
+						"translation.y": 300.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1189,6 +1218,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 183.0,
+	"side_bar_width": 243.0,
 	"status_bar_visible": true
 }

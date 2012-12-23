@@ -23,13 +23,31 @@ function selectRow ($element) {
 
     //});
 }
-function inControlBox ($element) {
+function inControlBox ($element,whichElement) {
 
-    if (inSelectionObject.row) {
-        $(inSelectionObject.row).removeClass('inselection');
+    if (inSelectionObject.col) {
+        inSelectionObject.col.removeClass('inselection');
     };
-    var $optionContainer = $('#rowoptions');
+    if (inSelectionObject.controlBox) {
+        inSelectionObject.controlBox.hide();
+    };
+    if (inSelectionObject.row) {
+        inSelectionObject.row.removeClass('inselection');
+        console.log('remove row selection');
+    };
+    if (whichElement==='row') {
 
+        var $optionContainer = $('#rowoptions');
+        $('#coloptions').hide();
+        inSelectionObject.row = $element;
+    };
+    if (whichElement==='col') {
+        var $optionContainer = $('#coloptions');
+        $('#rowoptions').hide();
+        inSelectionObject.row = $element;
+    };
+    console.log(inSelectionObject);
+    inSelectionObject.controlBox = $optionContainer;
     var offset = $element.offset();
     $optionContainer.show();
     $optionContainer.css({
@@ -38,5 +56,4 @@ function inControlBox ($element) {
     });
     console.log('inControlBox');
     $element.addClass('inselection');
-    inSelectionObject.row = $element;
 }
