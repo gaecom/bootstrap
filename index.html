@@ -67,7 +67,7 @@
     }
 }
 var stringData = {
-    "rowhtml":'<div class="row-fluid">\n</div>',
+    "rowhtml":'<div class="row-fluid" data-length="0">\n</div>',
     "colhtml1":'<div class="span1">\n</div>',
     "colhtml2":'<div class="span2">\n</div>',
     "colhtml4":'<div class="span4">\n</div>',
@@ -125,6 +125,7 @@ jQuery(document).ready(function  ($) {//prevent any conflicts
             * Write function to check whether overflowing
             */
             var colLength = parseInt($(this).attr('data-length'));
+            inSelectionObject.row.attr('data-length',parseInt(inSelectionObject.row.attr('data-length'))+colLength);
             var colhtml = stringData["colhtml"+colLength];
             inSelectionObject.row.append(colhtml);
             console.log(colhtml);
@@ -141,16 +142,16 @@ jQuery(document).ready(function  ($) {//prevent any conflicts
         });
         $('#increasewidth').on('click',function  () {
             changeWidthThroughClass(inSelectionObject.col,'span',true);
-            changeDataLength($row,true);
+            changeDataLength(inSelectionObject.row.parent(),true);
         });
         $('#decreasewidth').on('click',function  () {
             changeWidthThroughClass(inSelectionObject.col,'span',false);
-            changeDataLength($row,false);
+            changeDataLength(inSelectionObject.col.parent(),false);
         });
         $('#addanothercol').on('click',function  () {
             var $row = inSelectionObject.col.parent();
             $row.append(stringData.colhtml1);
-            changeDataLength($row,true);
+            changeDataLength(inSelectionObject.col.parent(),true);
         });
         $('#deletecol').on('click',function  () {
             inSelectionObject.col.remove();
@@ -160,13 +161,13 @@ jQuery(document).ready(function  ($) {//prevent any conflicts
         $('#increaseoffset').on('click',function  () {
             //inSelectionObject.col.remove();
             changeWidthThroughClass(inSelectionObject.col,'offset',true);
-            changeDataLength($row,true);
+            changeDataLength(inSelectionObject.col.parent(),true);
             //function to transfer control Box to another Column
         });
         $('#decreaseoffset').on('click',function  () {
             //inSelectionObject.col.remove();
             changeWidthThroughClass(inSelectionObject.col,'offset',false);
-            changeDataLength($row,false);
+            changeDataLength(inSelectionObject.col.parent(),false);
             //function to transfer control Box to another Column
         });
         //selectRow(firstRow);
