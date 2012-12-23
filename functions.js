@@ -1,9 +1,16 @@
-function changeWidthThroughClass ($element,className,isIncrease) {
-    if (!$element.hasClass(className)) {
+function changeWidthThroughClass ($element,isIncrease) {
+    /*if (!$element.hasClass(className)) {
         console.log('Doesnt have that Class')
+    };*/
+    var className = $element.attr('class').split(" ")[0];//first class
+    if (className==='inselection') {
+        className = $element.attr('class').split(" ")[1];//second class
     };
-    var lastNumber = parseInt(className[className.length-1]);
+    //console.log(className);
+    var lastNumber = parseInt(className[className.length-1]) ;
+    //console.log(lastNumber);
     var bootstrapClass = className.substr(0,className.length-1);
+    //console.log(bootstrapClass);
     if (isIncrease) {
         lastNumber = lastNumber +1 ;
     } else{
@@ -15,13 +22,12 @@ function changeWidthThroughClass ($element,className,isIncrease) {
         };
     };
     var newClass = bootstrapClass + lastNumber;
-    $element.removeClass(className).addClass(bootstrapClass);
+    console.log(newClass);
+    $element.removeClass(className);
+    $element.addClass(newClass);
 }
 function selectRow ($element) {
     console.log('row Selected');
-    //$element.on('click',function  () {
-
-    //});
 }
 function inControlBox ($element,whichElement) {
 
@@ -44,7 +50,7 @@ function inControlBox ($element,whichElement) {
     if (whichElement==='col') {
         var $optionContainer = $('#coloptions');
         $('#rowoptions').hide();
-        inSelectionObject.row = $element;
+        inSelectionObject.col = $element;
     };
     console.log(inSelectionObject);
     inSelectionObject.controlBox = $optionContainer;
