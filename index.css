@@ -2,12 +2,12 @@
 ::-webkit-scrollbar{width:8px;height:8px}
 ::-webkit-scrollbar-track{background:#dbdbdb;border-radius:30px}
 ::-webkit-scrollbar-thumb{border-radius:30px;background:#ababab;-webkit-box-shadow:none}
-body{overflow-x:hidden;;background: url(builder/tiny_grid.png) repeat white;}
+body{overflow-x:hidden;
+    /*background: url(builder/tiny_grid.png) repeat white;*/
+}
 #uppermargin{
     background-color: transparent;
     min-height: 75px;
-}
-.dropdown-menu{
 }
 #main-container{
     background-color: white;
@@ -26,15 +26,28 @@ body{overflow-x:hidden;;background: url(builder/tiny_grid.png) repeat white;}
 #rowoptions>.row{
     background-color: darkgrey;
 }
-.row-fluid{
+#main-container .row-fluid{
+    margin-bottom: 20px;
     min-height: 30px;
-    background-color: #ccc;
+    margin-top: 10px;
+    background-color: #EEE;
+
 }
 .row-fluid [class*="span"]{
-    background-color: darkgrey;
+    background-color: #CECECE;
+    cursor: pointer;
 }
-.inselection{
-    -webkit-box-shadow: inset 2px 0px 0px 15px lightBlue;
+.row-fluid [class*="span"]:hover{
+    background-color: #AAA;
+}
+.row-fluid.inselection{
+    -webkit-box-shadow: 0px 0px 7px 6px lightBlue;
+    -moz-box-shadow: 0px 0px 7px 6px lightBlue;
+}
+.row-fluid .inselection{
+    background-color: #5F5F5F;
+     -webkit-box-shadow: 0px 0px 7px 6px lightBlue;
+     -moz-box-shadow: 0px 0px 7px 6px lightBlue;
 }
 .row-fluid [class*="span"]:first-child {
 margin-left: 0;

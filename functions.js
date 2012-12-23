@@ -2,6 +2,8 @@ function changeWidthThroughClass ($element,classContains,isIncrease) {
     /*if (!$element.hasClass(className)) {
         console.log('Doesnt have that Class')
     };*/
+    /*Code to find the appropriate className*/
+
     var arrayposition = -1;
     var classNames = $element.attr('class').split(" ");//Array of all Classes
     $(classNames).each(function  (i) {
@@ -18,23 +20,29 @@ function changeWidthThroughClass ($element,classContains,isIncrease) {
     };
     //console.log(className);
     var lastNumber = parseInt(className[className.length-1]) ;
+    if (lastNumber===1 && !isIncrease) {
+        //if 1 is postfix and you are decreasing then remove the class
+        $element.removeClass(className);
+    }
+    else{
     //console.log(lastNumber);
-    var bootstrapClass = className.substr(0,className.length-1);
-    //console.log(bootstrapClass);
-    if (isIncrease) {
-        lastNumber = lastNumber +1 ;
-    } else{
-        if (lastNumber!==1) {
-            lastNumber = lastNumber - 1;
+        var bootstrapClass = className.substr(0,className.length-1);
+        //console.log(bootstrapClass);
+        if (isIncrease) {
+            lastNumber = lastNumber +1 ;
         } else{
-            console.log('Cannot be Decreased Further . Deleting the element');
-            //function for deleting the element
+            if (lastNumber!==1) {
+                lastNumber = lastNumber - 1;
+            } else{
+                console.log('Cannot be Decreased Further . Deleting the element');
+                //function for deleting the element
+            };
         };
+        var newClass = bootstrapClass + lastNumber;
+        console.log(newClass);
+        $element.removeClass(className);
+        $element.addClass(newClass);
     };
-    var newClass = bootstrapClass + lastNumber;
-    console.log(newClass);
-    $element.removeClass(className);
-    $element.addClass(newClass);
 }
 function selectRow ($element) {
     console.log('row Selected');
@@ -66,6 +74,9 @@ function inControlBox ($element,whichElement) {
     inSelectionObject.controlBox = $optionContainer;
     var offset = $element.offset();
     $optionContainer.show();
+    /*
+    *   Function to Check whether Flowing outside
+    */
     $optionContainer.css({
         'left' : offset.left,
         'top': offset.top - 60
@@ -73,3 +84,16 @@ function inControlBox ($element,whichElement) {
     console.log('inControlBox');
     $element.addClass('inselection');
 }
+function removeControlBox () {
+  inSelectionObject.controlBox.hide();
+ }
+ function changeDataLength ($row,isIncrease) {
+     var length = parseInt($row.attr('data-length'));
+     if (isIncrease) {
+        length=length+1;
+     }
+     else{
+        length = length -1;
+     };
+     $row.attr('data-length',length);
+ }

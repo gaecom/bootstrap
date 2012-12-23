@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <title>Learning Twitter Bootstrap</title>
-
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="index.css">
     <link rel="stylesheet" href="css/font-awesome.css">
@@ -19,8 +18,8 @@
                             <button class="btn addcol" data-length="6"><i class="icon-plus "></i>span6</button>
                         </div>
                         <div class="btn-group">
-                            <button class="btn" id="addrowabove"><i class="icon-plus "></i>Row Above <i class="icon-caret-up"></i></button>
-                            <button class="btn" id="addrowbelow"><i class="icon-plus "></i>Row Below <i class="icon-caret-down"></i></button>
+                            <button class="btn" id="addrowabove"><i class="icon-plus "></i>Row <i class="icon-caret-up"></i></button>
+                            <button class="btn" id="addrowbelow"><i class="icon-plus "></i>Row <i class="icon-caret-down"></i></button>
                             <button class="btn" id="deleterow"><i class="icon-remove icon-large"></i>Row</button>
                         </div>
                     </div>
@@ -33,11 +32,11 @@
                  <div class="btn-group">
                     <button class="btn" id="increasewidth"><i class="icon-chevron-up"></i> Width</button>
                     <button class="btn" id="decreasewidth"><i class="icon-chevron-down"></i> Width</button>
-                    <button class="btn" id="deletecol"><i class="icon-remove"></i>Col</button>
-                    <button class="btn" id="addanothercol"><i class="icon-plus"></i>Col<i class="icon-arrow-right"></i></button>
                     <button class="btn" id="increaseoffset"><i class="icon-chevron-right"></i>Offset</button>
                     <button class="btn" id="decreaseoffset"><i class="icon-chevron-left"></i>Offset</button>
+                    <button class="btn" id="addanothercol"><i class="icon-plus"></i>Col<i class="icon-arrow-right"></i></button>
                     <button class="btn" id="addsubrow"><i class="icon-plus"></i>Subrow</button>
+                    <button class="btn" id="deletecol"><i class="icon-remove"></i>Col</button>
                 </div>
             </div>
         </div>
@@ -47,11 +46,11 @@
         <div class="row-fluid">
             <div class="span2" id="side-column">
                 <div class="btn-group">
-                    <button class="btn">A</button>
+                    <button class="btn" id="downloadzip">ZIP</button>
                 </div>
             </div>
             <div class="span10" id="main-container">
-                <div class="row-fluid">
+                <div class="row-fluid" data-length="2">
                     <div class="span2"></div>
                 </div>
             </div>
@@ -59,6 +58,8 @@
     </div>
 <script type="text/javascript" src="builder/jquery.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!--<script type="text/javascript" src="js/jszip.js"></script>Delete in Production-->
+<script type="text/javascript" src="generate.js"></script>
 <script type="text/javascript">
     var optionJSON = {
     "popover":{
@@ -106,8 +107,8 @@ jQuery(document).ready(function  ($) {//prevent any conflicts
         });
         $('#deleterow').on('click',function  () {
             inSelectionObject.row.remove();
-
-            //If-Else Loops to check which row is in ControlBox
+            removeControlBox();
+            /*//If-Else Loops to check which row is in ControlBox
             if (inSelectionObject.row.next('.row-fluid').length!==0) {//If there is a row below
                 inControlBox(inSelectionObject.row.next('.row-fluid'),'row');
             } else{
@@ -116,17 +117,19 @@ jQuery(document).ready(function  ($) {//prevent any conflicts
                 } else{
                     //alert('You will have no rows Left');
                 };
-            };
+            };*/
             console.log('Delete Row Clicked');
         });
         $('.addcol').on('click',function  () {
+            /*
+            * Write function to check whether overflowing
+            */
             var colLength = parseInt($(this).attr('data-length'));
             var colhtml = stringData["colhtml"+colLength];
-            console.log(colhtml);
             inSelectionObject.row.append(colhtml);
+            console.log(colhtml);
         });
         $container.on('click','[class*="span"]',function  () {
-
             inControlBox($(this),'col');
             console.log('Col Clicked');
         });
@@ -138,21 +141,32 @@ jQuery(document).ready(function  ($) {//prevent any conflicts
         });
         $('#increasewidth').on('click',function  () {
             changeWidthThroughClass(inSelectionObject.col,'span',true);
+            changeDataLength($row,true);
         });
         $('#decreasewidth').on('click',function  () {
             changeWidthThroughClass(inSelectionObject.col,'span',false);
+            changeDataLength($row,false);
         });
         $('#addanothercol').on('click',function  () {
             var $row = inSelectionObject.col.parent();
             $row.append(stringData.colhtml1);
+            changeDataLength($row,true);
         });
         $('#deletecol').on('click',function  () {
             inSelectionObject.col.remove();
+            removeControlBox();
             //function to transfer control Box to another Column
         });
         $('#increaseoffset').on('click',function  () {
             //inSelectionObject.col.remove();
-            changeWidthThroughClass(inSelectionObject.col,'offset',true)
+            changeWidthThroughClass(inSelectionObject.col,'offset',true);
+            changeDataLength($row,true);
+            //function to transfer control Box to another Column
+        });
+        $('#decreaseoffset').on('click',function  () {
+            //inSelectionObject.col.remove();
+            changeWidthThroughClass(inSelectionObject.col,'offset',false);
+            changeDataLength($row,false);
             //function to transfer control Box to another Column
         });
         //selectRow(firstRow);

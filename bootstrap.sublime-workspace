@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"row",
+				"row-fluid"
+			],
+			[
+				"dec",
+				"decreaseoffset"
+			],
+			[
+				"cl",
+				"classContains"
+			],
+			[
+				"clas",
+				"classNames"
+			],
+			[
+				"class",
+				"className"
+			],
+			[
+				"ch",
+				"changeWidthThroughClass"
+			],
+			[
 				"increas",
 				"increaseoffset"
 			],
@@ -24,10 +48,6 @@
 				"addanothercol"
 			],
 			[
-				"clas",
-				"className"
-			],
-			[
 				"inc",
 				"increasewidth"
 			],
@@ -38,10 +58,6 @@
 			[
 				"con",
 				"controlBox"
-			],
-			[
-				"row",
-				"rowoptions"
 			],
 			[
 				"if",
@@ -202,10 +218,6 @@
 			[
 				"t",
 				"true"
-			],
-			[
-				"ch",
-				"changeInfo"
 			],
 			[
 				"update",
@@ -502,36 +514,35 @@
 			[
 				"font",
 				"font-size"
-			],
-			[
-				"lef",
-				"leftoffset"
-			],
-			[
-				"next",
-				"nextprev"
-			],
-			[
-				"ro",
-				"rotate"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "functions.js",
+			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 2115,
+				"buffer_size": 7371,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "index.html",
+			"contents": "//$.getScript('js/jszip.js') //Uncomment in production\n$('#downloadzip').on('click',function  () {\n\nvar zip = new JSZip();\n\nzip.file(\"Hello.txt\", \"Hello World\\n\");\n\n//var img = zip.folder(\"images\");\n//img.file(\"img/glyphicons-halflings.png\", imgData, {base64: true});\n\nvar content = zip.generate();\n\nlocation.href = \"data:application/zip;base64,\" + content;\n})",
+			"file": "generator.js",
+			"file_size": 369,
+			"file_write_time": 130007430745022795,
 			"settings":
 			{
-				"buffer_size": 6879,
+				"buffer_size": 360,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "functions.js",
+			"settings":
+			{
+				"buffer_size": 2459,
 				"line_ending": "Windows"
 			}
 		},
@@ -539,7 +550,7 @@
 			"file": "index.css",
 			"settings":
 			{
-				"buffer_size": 974,
+				"buffer_size": 1040,
 				"line_ending": "Windows"
 			}
 		},
@@ -628,6 +639,9 @@
 	},
 	"file_history":
 	[
+		"/H/bootstrap/img/glyphicons-halflings.png",
+		"/C/Users/Kanakiya/AppData/Local/Temp/Temp1_Stuk-jszip-5b88e21.zip/Stuk-jszip-5b88e21/jszip-load.js",
+		"/C/Users/Kanakiya/AppData/Local/Temp/Temp1_Stuk-jszip-5b88e21.zip/Stuk-jszip-5b88e21/jszip-deflate.js",
 		"/H/bootstrap/FortAwesome-Font-Awesome-ee55c85/css/font-awesome.css",
 		"/H/bootstrap/.gitignore",
 		"/H/bootstrap/css/bootstrap.css",
@@ -752,10 +766,7 @@
 		"/H/Analytics-chrome-extension/popup.html",
 		"/H/chrome-extension/README.md",
 		"/H/Chrome-Extensions-examples/medialize-URI.js-v1.7.2-0-g1f6d64b/medialize-URI.js-1f6d64b/src/IPv6.js",
-		"/H/Chrome-Extensions-examples/showHistory/typedUrls.html",
-		"/H/chrome-extension/manifest.json",
-		"/H/Chrome-Extensions-examples/showHistory/manifest.json",
-		"/H/chrome-extension/content_script.js"
+		"/H/Chrome-Extensions-examples/showHistory/typedUrls.html"
 	],
 	"find":
 	{
@@ -979,46 +990,18 @@
 			[
 				{
 					"buffer": 0,
-					"file": "functions.js",
-					"settings":
-					{
-						"buffer_size": 2115,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								19,
-								19
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 6879,
+						"buffer_size": 7371,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6682,
-								6682
+								2696,
+								2696
 							]
 						],
 						"settings":
@@ -1028,25 +1011,107 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3486.0,
+						"translation.y": 1761.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "index.css",
+					"buffer": 1,
+					"file": "generator.js",
 					"settings":
 					{
-						"buffer_size": 974,
+						"buffer_size": 360,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								746,
-								746
+								167,
+								167
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 7371,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2125,
+								2125
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 600.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "functions.js",
+					"settings":
+					{
+						"buffer_size": 2459,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								213,
+								213
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1050.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "index.css",
+					"settings":
+					{
+						"buffer_size": 1040,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								979,
+								979
 							]
 						],
 						"settings":
@@ -1056,13 +1121,13 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 300.0,
+						"translation.y": 525.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
 					"file": "builderfull.html",
 					"settings":
 					{
@@ -1090,7 +1155,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 5,
 					"file": "builder/builder.css",
 					"settings":
 					{
