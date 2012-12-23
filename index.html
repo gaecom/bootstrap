@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/font-awesome.css">
 </head>
 <body>
-    <div id="rowoptions">
+    <div id="rowoptions" class="optionbox">
          <div class="row">
                 <div class="span12 offset1">
                     <div class="btn-toolbar">
@@ -21,12 +21,13 @@
                             <button class="btn" id="addrowabove"><i class="icon-plus "></i>Row <i class="icon-caret-up"></i></button>
                             <button class="btn" id="addrowbelow"><i class="icon-plus "></i>Row <i class="icon-caret-down"></i></button>
                             <button class="btn" id="deleterow"><i class="icon-remove icon-large"></i>Row</button>
+                            <button class="btn closebox"><i class="icon-off"></i>Close</button>
                         </div>
                     </div>
                 </div>
             </div>
     </div>
-    <div id="coloptions">
+    <div id="coloptions" class="optionbox">
         <div class="row">
             <div class="span7">
                  <div class="btn-group">
@@ -37,6 +38,7 @@
                     <button class="btn" id="addanothercol"><i class="icon-plus"></i>Col<i class="icon-arrow-right"></i></button>
                     <button class="btn" id="addsubrow"><i class="icon-plus"></i>Subrow</button>
                     <button class="btn" id="deletecol"><i class="icon-remove"></i>Col</button>
+                    <button class="btn closebox"><i class="icon-off"></i>Close</button>
                 </div>
             </div>
         </div>
@@ -68,7 +70,7 @@
 }
 var stringData = {
     "rowhtml":'<div class="row-fluid" data-length="0">\n</div>',
-    "colhtml1":'<div class="span1">\nspan1</div>',
+    "colhtml1":'<div class="span1">\n</div>',
     "colhtml2":'<div class="span2">\n</div>',
     "colhtml4":'<div class="span4">\n</div>',
     "colhtml6":'<div class="span6">\n</div>',
@@ -121,6 +123,10 @@ jQuery(document).ready(function  ($) {//prevent any conflicts
             };*/
             console.log('Delete Row Clicked');
         });
+        $('.closebox').on('click',function  () {
+            $('.optionbox').hide();
+            $('.inselection').removeClass('inselection');
+        });
         $('.addcol').on('click',function  () {
             /*
             * Write function to check whether overflowing
@@ -150,8 +156,9 @@ jQuery(document).ready(function  ($) {//prevent any conflicts
             changeDataLength(inSelectionObject.col.parent(),false);
         });
         $('#addanothercol').on('click',function  () {
-            var $row = inSelectionObject.col.parent();
-            $row.append(stringData.colhtml1);
+
+            $(stringData.colhtml1).insertAfter(inSelectionObject.col);
+
             changeDataLength(inSelectionObject.col.parent(),true);
         });
         $('#deletecol').on('click',function  () {
