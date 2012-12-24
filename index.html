@@ -5,6 +5,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="index.css">
     <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/codemirror.css">
 </head>
 <body>
     <div id="rowoptions" class="optionbox">
@@ -35,10 +36,29 @@
                     <button class="btn" id="decreasewidth"><i class="icon-chevron-down"></i> Width</button>
                     <button class="btn" id="increaseoffset"><i class="icon-chevron-right"></i>Offset</button>
                     <button class="btn" id="decreaseoffset"><i class="icon-chevron-left"></i>Offset</button>
+                    <button class="btn" id="addcomponent"><i class="icon-asterisk">component</i></button>
                     <button class="btn" id="addanothercol"><i class="icon-plus"></i>Col<i class="icon-arrow-right"></i></button>
                     <button class="btn" id="addsubrow"><i class="icon-plus"></i>Subrow</button>
                     <button class="btn" id="deletecol"><i class="icon-remove"></i>Col</button>
                     <button class="btn closebox"><i class="icon-off"></i>Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="componentbox" class="optionbox">
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span4">
+                       <textarea name="codemirror" id="codemirror">
+                        <h2>This is CodeMirror</h2>
+                        <p>This is a demo</p>
+                       </textarea>
+                </div>
+                <div class="span4">
+                    <iframe id="preview"></iframe>
+                </div>
+                <div class="span4">
+                    List Of components
                 </div>
             </div>
         </div>
@@ -60,6 +80,12 @@
     </div>
 <script type="text/javascript" src="builder/jquery.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/codemirror.js"></script>
+<script type="text/javascript" src="js/xml.js"></script>
+<script type="text/javascript" src="js/css.js"></script>
+<script type="text/javascript" src="js/javascript.js"></script>
+<script type="text/javascript" src="js/htmlmixed.js"></script>
+<script type="text/javascript" src="component.js"></script>
 <!--<script type="text/javascript" src="js/jszip.js"></script>Delete in Production-->
 <script type="text/javascript" src="generate.js"></script>
 <script type="text/javascript">
@@ -179,8 +205,12 @@ jQuery(document).ready(function  ($) {//prevent any conflicts
             //function to transfer control Box to another Column
         });
         $('#addsubrow').on('click',function  () {
+            //Check
             var subrowhtml = stringData.subrowhtml;
             inSelectionObject.col.append(subrowhtml);
+        });
+        $('#addcomponent').on('click',function  () {
+            $('#componentbox').show();
         });
         //selectRow(firstRow);
         //firstRow.click();

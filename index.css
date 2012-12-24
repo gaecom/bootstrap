@@ -12,16 +12,30 @@ body{overflow-x:hidden;
 #main-container{
     background-color: white;
 }
-#rowoptions,#coloptions{
+.optionbox{
     display: none;
     z-index: 9999;
     position: fixed;
     top: 0;
     left: 0;
     overflow: hidden;
-    max-height: 45px;
+
     width: 80%;
-    margin: 1%;
+
+}
+#componentbox{
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+}
+#componentbox>.container-fluid{
+    margin-top: 8%;
+    margin-left: 15%;
+    background: white;
+}
+#componentbox .row-fluid{
+    background-color: white;
+    margin-top: 9%;
 }
 #rowoptions>.row{
     background-color: darkgrey;
@@ -33,11 +47,11 @@ body{overflow-x:hidden;
     background-color: #EEE;
 
 }
-.row-fluid [class*="span"]{
+#main-container [class*="span"]{
     background-color: #CECECE;
     cursor: pointer;
 }
-.row-fluid [class*="span"]:hover{
+#main-container [class*="span"]:hover{
     background-color: #AAA;
 }
 .row-fluid.inselection{
