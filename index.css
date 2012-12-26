@@ -79,9 +79,10 @@ border: 2px solid rgba(235, 235, 235, 0.9);
     height: 300px;
     width: 330px;
 }
-/**  For Component's CSS **/
+/**  For Component's CSS *
 .dropdown-menu{
 display: block;
 position: static;
 margin-bottom: 5px;
 }
+*/
