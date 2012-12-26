@@ -48,17 +48,26 @@
     <div id="componentbox" class="optionbox">
         <div class="container-fluid">
             <div class="row-fluid">
-                <div class="span4">
+                <div class="span4" id="componentcontainer">
+                    <ul class="thumbnails">
+                        <li class="span4"><button class="btn" id="dropdown">DropDown</button></li>
+                        <li class="span4"><button class="btn" id="navbar">Navbar</button></li>
+                        <li class="span4"><button class="btn" id="typography">Typography</button></li>
+                    </ul>
+                </div>
+                <div class="span4 ">
+                <h4>Code</h4>
+                    <form>
                        <textarea name="codemirror" id="codemirror">
-                        <h2>This is CodeMirror</h2>
-                        <p>This is a demo</p>
+
+<h2>This is CodeMirror</h2>
+<p>This is a demo</p>
                        </textarea>
+                    </form>
                 </div>
                 <div class="span4">
-                    <iframe id="preview"></iframe>
-                </div>
-                <div class="span4">
-                    List Of components
+                    <h4>Live View</h4>
+                    <div id="preview"></div>
                 </div>
             </div>
         </div>
@@ -82,9 +91,10 @@
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/codemirror.js"></script>
 <script type="text/javascript" src="js/xml.js"></script>
-<script type="text/javascript" src="js/css.js"></script>
+<!--USED FOR HTML-MIXED-->
+<!--<script type="text/javascript" src="js/css.js"></script>
 <script type="text/javascript" src="js/javascript.js"></script>
-<script type="text/javascript" src="js/htmlmixed.js"></script>
+<script type="text/javascript" src="js/htmlmixed.js"></script>-->
 <script type="text/javascript" src="component.js"></script>
 <!--<script type="text/javascript" src="js/jszip.js"></script>Delete in Production-->
 <script type="text/javascript" src="generate.js"></script>
@@ -100,7 +110,8 @@ var stringData = {
     "colhtml2":'<div class="span2">\n</div>',
     "colhtml4":'<div class="span4">\n</div>',
     "colhtml6":'<div class="span6">\n</div>',
-    "subrowhtml":'<div class="row-fluid">\n</div>'
+    "subrowhtml":'<div class="row-fluid">\n</div>',
+    "dropdown":'<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">\n<li><a tabindex="-1" href="#">Action</a></li>\n<li><a tabindex="-1" href="#">Another action</a></li>\n<li><a tabindex="-1" href="#">Something else here</a></li>\n<li class="divider"></li>\n<li><a tabindex="-1" href="#">Separated link</a></li>\n</ul>'
 }
 var inSelectionObject = {};
 </script>
@@ -212,6 +223,14 @@ jQuery(document).ready(function  ($) {//prevent any conflicts
         $('#addcomponent').on('click',function  () {
             $('#componentbox').show();
         });
+        $('#componentcontainer').on('click','.btn',function  (e) {
+            var componentname = $(this).attr('id');
+            var itshtml = stringData[componentname];
+            console.log(itshtml);
+            editor.setValue(itshtml);
+            $('#preview').html(itshtml);
+        });
+        $
         //selectRow(firstRow);
         //firstRow.click();
 });

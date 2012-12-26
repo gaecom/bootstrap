@@ -19,23 +19,7 @@ body{overflow-x:hidden;
     top: 0;
     left: 0;
     overflow: hidden;
-
     width: 80%;
-
-}
-#componentbox{
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.7);
-}
-#componentbox>.container-fluid{
-    margin-top: 8%;
-    margin-left: 15%;
-    background: white;
-}
-#componentbox .row-fluid{
-    background-color: white;
-    margin-top: 9%;
 }
 #rowoptions>.row{
     background-color: darkgrey;
@@ -65,4 +49,39 @@ body{overflow-x:hidden;
 }
 .row-fluid [class*="span"]:first-child {
 margin-left: 0;
+}
+/** FOR CODEMIRROR */
+#codemirror{
+    margin-top: 3%;
+    padding: 1%;
+}
+#componentbox{
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+}
+#componentbox>.container-fluid{
+margin-top: 3%;
+background: rgba(0,0,0,0.2);
+height: 84%;
+}
+#componentbox .row-fluid{
+    background-color: white;
+    height: 65%;
+    margin-top: 6%;
+}
+#componentbox [class*="span"]{
+    padding: 1.1%;
+    height: 100%;
+border: 2px solid rgba(235, 235, 235, 0.9);
+}
+#preview{
+    height: 300px;
+    width: 330px;
+}
+/**  For Component's CSS **/
+.dropdown-menu{
+display: block;
+position: static;
+margin-bottom: 5px;
 }
