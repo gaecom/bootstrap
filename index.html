@@ -54,6 +54,11 @@
                         <li class="span4"><button class="btn" id="dropdown">DropDown</button></li>
                         <li class="span4"><button class="btn" id="navbar">Navbar</button></li>
                         <li class="span4"><button class="btn" id="typography">Typography</button></li>
+                        <li class="span4"><button class="btn" id="buttongroup">Btn Group</button></li>
+                        <li class="span4"><button class="btn" id="tabs">Tabs</button></li>
+                        <li class="span4"><button class="btn" id="navlist">nav-list</button></li>
+                        <li class="span4"><button class="btn" id="tabbablenav">Tabbable Nav</button></li>
+                        <li class="span4"><button class="btn" id="form">Form</button></li>
                     </ul>
                 </div>
                 <div class="span5 ">
@@ -87,7 +92,7 @@
             </div>
         </div>
     </div>
-<script type="text/javascript" src="builder/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/codemirror.js"></script>
 <script type="text/javascript" src="js/xml.js"></script>
@@ -112,8 +117,13 @@ var stringData = {
     "colhtml6":'<div class="span6">\n</div>',
     "subrowhtml":'<div class="row-fluid">\n</div>',
     "dropdown":'<div class="dropdown">\n<a class="dropdown-toggle" data-toggle="dropdown" href="#">Dropdown trigger</a>\n\t<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">\n\t\t<li><a tabindex="-1" href="#">Action</a></li>\n\t\t<li><a tabindex="-1" href="#">Another action</a></li>\n\t\t<li><a tabindex="-1" href="#">Something else here</a></li>\n\t\t<li class="divider"></li>\n\t\t<li><a tabindex="-1" href="#">Separated link</a></li>\n\t</ul>\n</div>',
-    "typography":'<div class="hero-unit">\n\t<h1>Heading</h1>\n\t<p>Tagline</p>\n\t<p>\n\t\t\t<a class="btn btn-primary btn-large">\n\t\tLearn more\n\t\t</a>\n\t\t</p>\n\t\t</div>',
-    "navbar":'<div class="navbar">\n<div class="navbar-inner">\n<a class="brand" href="#">Title</a>\n<ul class="nav">\n<li class="active">\t\t<a href="#">Home</a></li>\n<li><a href="#">Link</a></li>\n<li><a href="#">Link</a></li>\n</ul>\n</div>\n</div>'
+    "typography":'<div class="hero-unit">\n\t<h1>Heading</h1>\n\t<p>Tagline</p>\n\t<p>\n\t\t<a class="btn btn-primary btn-large">\n\t\tLearn more\n\t\t</a>\n\t</p>\n</div>',
+    "navbar":'<div class="navbar">\n<div class="navbar-inner">\n<a class="brand" href="#">Title</a>\n<ul class="nav">\n<li class="active">\t\t<a href="#">Home</a></li>\n<li><a href="#">Link</a></li>\n<li><a href="#">Link</a></li>\n</ul>\n</div>\n</div>',
+    "buttongroup":'<div class="btn-group">\n\t<button class="btn">1</button>\n\t<button class="btn">2</button>\n\t<button class="btn">3</button>\n</div>',
+    "tabs":'<ul class="nav nav-tabs">\n\t<li class="active">\n\t\t<a href="#">Home</a>\n\t</li>\n\t<li><a href="#">...</a></li>\n\t<li><a href="#">...</a></li>\n</ul>',
+    "navlist":'<ul class="nav nav-list">\n<li class="nav-header">List header</li>\n<li class="active"><a href="#">Home</a></li>\n<li><a href="#">Library</a></li>\n...\n</ul>',
+    "tabbablenav":'<div class="tabbable">\n<ul class="nav nav-tabs">\n<li class="active"><a href="#tab1" data-toggle="tab">Section 1</a></li>\n<li><a href="#tab2" data-toggle="tab">Section 2</a></li>\n</ul>\n<div class="tab-content">\n<div class="tab-pane active" id="tab1">\n<p>I am in Section 1.</p>\n</div>\n<div class="tab-pane" id="tab2">\n<p>Howdy, I am in Section 2.</p>\n</div>\n</div>\n</div>',
+    "form":'<form class="navbar-form pull-left">\n<input type="text" class="span2">\n<button type="submit" class="btn">Submit</button>\n</form>'
 }
 var inSelectionObject = {};
 </script>

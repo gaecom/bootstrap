@@ -3,7 +3,7 @@
 ::-webkit-scrollbar-track{background:#dbdbdb;border-radius:30px}
 ::-webkit-scrollbar-thumb{border-radius:30px;background:#ababab;-webkit-box-shadow:none}
 body{overflow-x:hidden;
-    /*background: url(builder/tiny_grid.png) repeat white;*/
+    /*background: url(img/tiny_grid.png) repeat white;*/
 }
 #uppermargin{
     background-color: transparent;
