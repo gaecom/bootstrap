@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="css/codemirror.css">
 </head>
 <body>
+    <div id="editorfull" class="optionbox">
+        <textarea name="completeeditor" id="completeeditor">
+            <div class="row-fluid"></div>
+        </textarea>
+    </div>
     <div id="rowoptions" class="optionbox">
          <div class="row">
                 <div class="span12 offset1">
@@ -83,6 +88,7 @@
             <div class="span2" id="side-column">
                 <div class="btn-group">
                     <button class="btn" id="downloadzip">ZIP</button>
+                    <button class="btn" id="showeditor">Editor</button>
                 </div>
             </div>
             <div class="span10" id="main-container">
@@ -101,6 +107,7 @@
 <script type="text/javascript" src="js/javascript.js"></script>
 <script type="text/javascript" src="js/htmlmixed.js"></script>-->
 <script type="text/javascript" src="component.js"></script>
+<script type="text/javascript" src="js/fullhtml.js"></script>
 <!--<script type="text/javascript" src="js/jszip.js"></script>Delete in Production-->
 <script type="text/javascript" src="generate.js"></script>
 <script type="text/javascript">
@@ -250,8 +257,13 @@ jQuery(document).ready(function  ($) {//prevent any conflicts
             inSelectionObject.col.html(itshtml);
         });
 
-        //selectRow(firstRow);
-        //firstRow.click();
+        $('#showeditor').on('click',function  () {
+            $('#editorfull').show();
+            //$('.optionbox').hide(); Remove other control boxes
+            $('.inselection').removeClass('inselection');
+            maineditor.setValue(document.getElementById('main-container').innerHTML);
+        });
+
 });
 </script>
 </body>

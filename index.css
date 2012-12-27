@@ -5,6 +5,18 @@
 body{overflow-x:hidden;
     /*background: url(img/tiny_grid.png) repeat white;*/
 }
+/** Complete Code Editor**/
+#editorfull{
+    height: 98%;
+    width: 35%;
+    background-color: white;
+    margin-top: 2%;
+}
+#completeeditor{
+    height: 98%;
+width: 30%;
+}
+/**/
 #uppermargin{
     background-color: transparent;
     min-height: 75px;
