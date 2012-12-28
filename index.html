@@ -110,24 +110,25 @@
     }
 }
 var stringData = {
-    "rowhtml":'<div class="row-fluid" data-length="0">\n</div>',
-    "colhtml1":'<div class="span1">\n</div>',
-    "colhtml2":'<div class="span2">\n</div>',
-    "colhtml4":'<div class="span4">\n</div>',
-    "colhtml6":'<div class="span6">\n</div>',
-    "subrowhtml":'<div class="row-fluid">\n</div>',
-    "dropdown":'<div class="dropdown">\n<a class="dropdown-toggle" data-toggle="dropdown" href="#">Dropdown trigger</a>\n\t<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">\n\t\t<li><a tabindex="-1" href="#">Action</a></li>\n\t\t<li><a tabindex="-1" href="#">Another action</a></li>\n\t\t<li><a tabindex="-1" href="#">Something else here</a></li>\n\t\t<li class="divider"></li>\n\t\t<li><a tabindex="-1" href="#">Separated link</a></li>\n\t</ul>\n</div>',
-    "typography":'<div class="hero-unit">\n\t<h1>Heading</h1>\n\t<p>Tagline</p>\n\t<p>\n\t\t<a class="btn btn-primary btn-large">\n\t\tLearn more\n\t\t</a>\n\t</p>\n</div>',
-    "navbar":'<div class="navbar">\n<div class="navbar-inner">\n<a class="brand" href="#">Title</a>\n<ul class="nav">\n<li class="active">\t\t<a href="#">Home</a></li>\n<li><a href="#">Link</a></li>\n<li><a href="#">Link</a></li>\n</ul>\n</div>\n</div>',
-    "buttongroup":'<div class="btn-group">\n\t<button class="btn">1</button>\n\t<button class="btn">2</button>\n\t<button class="btn">3</button>\n</div>',
-    "tabs":'<ul class="nav nav-tabs">\n\t<li class="active">\n\t\t<a href="#">Home</a>\n\t</li>\n\t<li><a href="#">...</a></li>\n\t<li><a href="#">...</a></li>\n</ul>',
-    "navlist":'<ul class="nav nav-list">\n<li class="nav-header">List header</li>\n<li class="active"><a href="#">Home</a></li>\n<li><a href="#">Library</a></li>\n...\n</ul>',
+    "rowhtml":'<div class="row-fluid">\n</div>\n',
+    "colhtml1":'<div class="span1">\n</div>\n',
+    "colhtml2":'<div class="span2">\n</div>\n',
+    "colhtml4":'<div class="span4">\n</div>\n',
+    "colhtml6":'<div class="span6">\n</div>\n',
+    "subrowhtml":'<div class="row-fluid">\n</div>\n',
+    "dropdown":'<div class="dropdown">\n<a class="dropdown-toggle" data-toggle="dropdown" href="#">Dropdown trigger</a>\n\t<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">\n\t\t<li><a tabindex="-1" href="#">Action</a></li>\n\t\t<li><a tabindex="-1" href="#">Another action</a></li>\n\t\t<li><a tabindex="-1" href="#">Something else here</a></li>\n\t\t<li class="divider"></li>\n\t\t<li><a tabindex="-1" href="#">Separated link</a></li>\n\t</ul>\n</div>\n',
+    "typography":'<div class="hero-unit">\n\t<h1>Heading</h1>\n\t<p>Tagline</p>\n\t<p>\n\t\t<a class="btn btn-primary btn-large">\n\t\tLearn more\n\t\t</a>\n\t</p>\n</div>\n',
+    "navbar":'<div class="navbar">\n<div class="navbar-inner">\n<a class="brand" href="#">Title</a>\n<ul class="nav">\n<li class="active">\t\t<a href="#">Home</a></li>\n<li><a href="#">Link</a></li>\n<li><a href="#">Link</a></li>\n</ul>\n</div>\n</div>\n',
+    "buttongroup":'<div class="btn-group">\n\t<button class="btn">1</button>\n\t<button class="btn">2</button>\n\t<button class="btn">3</button>\n</div>\n',
+    "tabs":'<ul class="nav nav-tabs">\n\t<li class="active">\n\t\t<a href="#">Home</a>\n\t</li>\n\t<li><a href="#">...</a></li>\n\t<li><a href="#">...</a></li>\n</ul>\n',
+    "navlist":'<ul class="nav nav-list">\n<li class="nav-header">List header</li>\n<li class="active"><a href="#">Home</a></li>\n<li><a href="#">Library</a></li>\n...\n</ul>\n',
     "tabbablenav":'<div class="tabbable">\n<ul class="nav nav-tabs">\n<li class="active"><a href="#tab1" data-toggle="tab">Section 1</a></li>\n<li><a href="#tab2" data-toggle="tab">Section 2</a></li>\n</ul>\n<div class="tab-content">\n<div class="tab-pane active" id="tab1">\n<p>I am in Section 1.</p>\n</div>\n<div class="tab-pane" id="tab2">\n<p>Howdy, I am in Section 2.</p>\n</div>\n</div>\n</div>',
     "form":'<form class="navbar-form pull-left">\n<input type="text" class="span2">\n<button type="submit" class="btn">Submit</button>\n</form>'
 }
 var inSelectionObject = {};
 </script>
 <script type="text/javascript">
+
 jQuery(document).ready(function  ($) {//prevent any conflicts
     /*
     After Going Live
@@ -149,22 +150,22 @@ jQuery(document).ready(function  ($) {//prevent any conflicts
 
         console.log(maineditor);
         // FROM LIVE VIEW TO CODE
-        $('.optionbox').click(function  () {
-            console.log('cursor in builder part ');
+        function  updateCode() {
             //For Updating code of the EDITOR
             maineditor.setValue(document.getElementById('main-container').innerHTML);
-        });
+        }
         //FROM CODE TO LIVE VIEW
-    var delay;
-      maineditor.on("change", function() {
+        var delay;
+        maineditor.on("change", function() {
         clearTimeout(delay);
         delay = setTimeout(updatePreview, 300);
-      });
+        });
+        //FUNCTION FOR STRING TO LINE BREAK
+        function updatePreview() {
+            document.getElementById('main-container').innerHTML=maineditor.getValue();
+        }
+        setTimeout(updatePreview, 300);
 
-      function updatePreview() {
-        document.getElementById('main-container').innerHTML=maineditor.getValue();
-      }
-      setTimeout(updatePreview, 300);
 
       /*END OF CODE <- -> LIVE */
         $('#addrowabove').on('click',function  () {
@@ -207,14 +208,16 @@ jQuery(document).ready(function  ($) {//prevent any conflicts
             * Write function to check whether overflowing
             */
             var colLength = parseInt($(this).attr('data-length'));
-            inSelectionObject.row.attr('data-length',parseInt(inSelectionObject.row.attr('data-length'))+colLength);
+            //inSelectionObject.row.attr('data-length',parseInt(inSelectionObject.row.attr('data-length'))+colLength);
             var colhtml = stringData["colhtml"+colLength];
             inSelectionObject.row.append(colhtml);
             console.log(colhtml);
+            updateCode();
         });
         $container.on('click','[class*="span"]',function  () {
             inControlBox($(this),'col');
             console.log('Col Clicked');
+
         });
         $container.on('click','.row-fluid',function  (e) {
             if ($(e.target).hasClass('row-fluid')) {//necessary for click position
@@ -224,33 +227,37 @@ jQuery(document).ready(function  ($) {//prevent any conflicts
         });
         $('#increasewidth').on('click',function  () {
             changeWidthThroughClass(inSelectionObject.col,'span',true);
-            changeDataLength(inSelectionObject.col.parent(),true);
+            //changeDataLength(inSelectionObject.col.parent(),true);
+            updateCode();
         });
         $('#decreasewidth').on('click',function  () {
             changeWidthThroughClass(inSelectionObject.col,'span',false);
-            changeDataLength(inSelectionObject.col.parent(),false);
+            //changeDataLength(inSelectionObject.col.parent(),false);
+            updateCode();
         });
         $('#addanothercol').on('click',function  () {
 
             $(stringData.colhtml1).insertAfter(inSelectionObject.col);
-
-            changeDataLength(inSelectionObject.col.parent(),true);
+            updateCode();
+            //changeDataLength(inSelectionObject.col.parent(),true);
         });
         $('#deletecol').on('click',function  () {
             inSelectionObject.col.remove();
             removeControlBox();
+            updateCode();
             //function to transfer control Box to another Column
         });
         $('#increaseoffset').on('click',function  () {
             //inSelectionObject.col.remove();
             changeWidthThroughClass(inSelectionObject.col,'offset',true);
-            changeDataLength(inSelectionObject.col.parent(),true);
+            //changeDataLength(inSelectionObject.col.parent(),true);
             //function to transfer control Box to another Column
         });
         $('#decreaseoffset').on('click',function  () {
             //inSelectionObject.col.remove();
             changeWidthThroughClass(inSelectionObject.col,'offset',false);
-            changeDataLength(inSelectionObject.col.parent(),false);
+            updateCode();
+            //changeDataLength(inSelectionObject.col.parent(),false);
             //function to transfer control Box to another Column
         });
         $('#addsubrow').on('click',function  () {
@@ -260,7 +267,7 @@ jQuery(document).ready(function  ($) {//prevent any conflicts
         });
         $('#addcomponent').on('click',function  () {
             $('#componentbox').show();
-            var itshtml = inSelectionObject.col.html();
+            //var itshtml = inSelectionObject.col.html();
             //editor.setValue(itshtml);
         });
         $('#componentcontainer').on('click','.btn',function  (e) {
