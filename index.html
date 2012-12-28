@@ -8,11 +8,7 @@
     <link rel="stylesheet" href="css/codemirror.css">
 </head>
 <body>
-    <div id="editorfull" class="optionbox">
-        <textarea name="completeeditor" id="completeeditor">
-            <div class="row-fluid"></div>
-        </textarea>
-    </div>
+
     <div id="rowoptions" class="optionbox">
          <div class="row">
                 <div class="span12 offset1">
@@ -68,12 +64,7 @@
                 </div>
                 <div class="span5 ">
                 <h4>Code</h4>
-                    <form>
-                       <textarea name="codemirror" id="codemirror">
-<h2>This is CodeMirror</h2>
-<p>This is a demo</p>
-                       </textarea>
-                    </form>
+
                 </div>
                 <div class="span4">
                     <h4>Live View</h4>
@@ -83,16 +74,20 @@
         </div>
     </div>
     <div class="row" id="uppermargin"></div>
+    <!--The VIEW-->
     <div class="container-fluid">
         <div class="row-fluid">
-            <div class="span2" id="side-column">
-                <div class="btn-group">
-                    <button class="btn" id="downloadzip">ZIP</button>
-                    <button class="btn" id="showeditor">Editor</button>
-                </div>
+            <div class="span4" id="side-column">
+
+                    <!--EDITING OF THE CODE-->
+                        <form><textarea name="completeeditor" id="completeeditor">
+<div class="row-fluid"></div>
+                                                </textarea></form>
+
             </div>
-            <div class="span10" id="main-container">
-                <div class="row-fluid" data-length="2">
+            <!--LIVE VIEW OF THE CODE-->
+            <div class="span6" id="main-container">
+                <div class="row-fluid">
                     <div class="span2"></div>
                 </div>
             </div>
@@ -102,13 +97,11 @@
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/codemirror.js"></script>
 <script type="text/javascript" src="js/xml.js"></script>
+<script type="text/javascript" src="functions.js"></script>
 <!--USED FOR HTML-MIXED-->
 <!--<script type="text/javascript" src="js/css.js"></script>
 <script type="text/javascript" src="js/javascript.js"></script>
 <script type="text/javascript" src="js/htmlmixed.js"></script>-->
-<script type="text/javascript" src="component.js"></script>
-<script type="text/javascript" src="js/fullhtml.js"></script>
-<!--<script type="text/javascript" src="js/jszip.js"></script>Delete in Production-->
 <script type="text/javascript" src="generate.js"></script>
 <script type="text/javascript">
     var optionJSON = {
@@ -134,7 +127,6 @@ var stringData = {
 }
 var inSelectionObject = {};
 </script>
-<script type="text/javascript" src="functions.js"></script>
 <script type="text/javascript">
 jQuery(document).ready(function  ($) {//prevent any conflicts
     /*
@@ -147,11 +139,34 @@ jQuery(document).ready(function  ($) {//prevent any conflicts
             optionData = data;
         });
         */
-
-        //Global Variables
+//Global Variables
         var $container = $('#main-container');
         var rowhtml = stringData.rowhtml;
-        var firstRow = $container.children('.row-fluid');
+        var maineditor = CodeMirror.fromTextArea(document.getElementById("completeeditor"), {
+        mode: {name: "xml", alignCDATA: true},
+        lineNumbers: true
+        });
+
+        console.log(maineditor);
+        // FROM LIVE VIEW TO CODE
+        $('.optionbox').click(function  () {
+            console.log('cursor in builder part ');
+            //For Updating code of the EDITOR
+            maineditor.setValue(document.getElementById('main-container').innerHTML);
+        });
+        //FROM CODE TO LIVE VIEW
+    var delay;
+      maineditor.on("change", function() {
+        clearTimeout(delay);
+        delay = setTimeout(updatePreview, 300);
+      });
+
+      function updatePreview() {
+        document.getElementById('main-container').innerHTML=maineditor.getValue();
+      }
+      setTimeout(updatePreview, 300);
+
+      /*END OF CODE <- -> LIVE */
         $('#addrowabove').on('click',function  () {
             var $row = $(this);
             $(rowhtml).insertBefore(inSelectionObject.row);
@@ -179,14 +194,14 @@ jQuery(document).ready(function  ($) {//prevent any conflicts
             };*/
             console.log('Delete Row Clicked');
         });
-        $('.closebox').on('click',function  () {
+        /*$('.closebox').on('click',function  () {
             $('.optionbox').hide();
             $('.inselection').removeClass('inselection');
             if ($(this).attr('data-id')==='componentclose') {
                 var itshtml = editor.getValue();
                 inSelectionObject.col.html(itshtml);
             };
-        });
+        });*/
         $('.addcol').on('click',function  () {
             /*
             * Write function to check whether overflowing
@@ -246,22 +261,15 @@ jQuery(document).ready(function  ($) {//prevent any conflicts
         $('#addcomponent').on('click',function  () {
             $('#componentbox').show();
             var itshtml = inSelectionObject.col.html();
-            editor.setValue(itshtml);
+            //editor.setValue(itshtml);
         });
         $('#componentcontainer').on('click','.btn',function  (e) {
             var componentname = $(this).attr('id');
             var itshtml = stringData[componentname];
             console.log(itshtml);
-            editor.setValue(itshtml);
+            //editor.setValue(itshtml);
             inSelectionObject.col.attr('data-content',itshtml);
             inSelectionObject.col.html(itshtml);
-        });
-
-        $('#showeditor').on('click',function  () {
-            $('#editorfull').show();
-            //$('.optionbox').hide(); Remove other control boxes
-            $('.inselection').removeClass('inselection');
-            maineditor.setValue(document.getElementById('main-container').innerHTML);
         });
 
 });
