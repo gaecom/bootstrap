@@ -110,19 +110,19 @@
     }
 }
 var stringData = {
-    "rowhtml":'<div class="row-fluid">\n</div>\n',
-    "colhtml1":'<div class="span1">\n</div>\n',
-    "colhtml2":'<div class="span2">\n</div>\n',
-    "colhtml4":'<div class="span4">\n</div>\n',
-    "colhtml6":'<div class="span6">\n</div>\n',
-    "subrowhtml":'<div class="row-fluid">\n</div>\n',
-    "dropdown":'<div class="dropdown">\n<a class="dropdown-toggle" data-toggle="dropdown" href="#">Dropdown trigger</a>\n\t<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">\n\t\t<li><a tabindex="-1" href="#">Action</a></li>\n\t\t<li><a tabindex="-1" href="#">Another action</a></li>\n\t\t<li><a tabindex="-1" href="#">Something else here</a></li>\n\t\t<li class="divider"></li>\n\t\t<li><a tabindex="-1" href="#">Separated link</a></li>\n\t</ul>\n</div>\n',
-    "typography":'<div class="hero-unit">\n\t<h1>Heading</h1>\n\t<p>Tagline</p>\n\t<p>\n\t\t<a class="btn btn-primary btn-large">\n\t\tLearn more\n\t\t</a>\n\t</p>\n</div>\n',
-    "navbar":'<div class="navbar">\n<div class="navbar-inner">\n<a class="brand" href="#">Title</a>\n<ul class="nav">\n<li class="active">\t\t<a href="#">Home</a></li>\n<li><a href="#">Link</a></li>\n<li><a href="#">Link</a></li>\n</ul>\n</div>\n</div>\n',
-    "buttongroup":'<div class="btn-group">\n\t<button class="btn">1</button>\n\t<button class="btn">2</button>\n\t<button class="btn">3</button>\n</div>\n',
-    "tabs":'<ul class="nav nav-tabs">\n\t<li class="active">\n\t\t<a href="#">Home</a>\n\t</li>\n\t<li><a href="#">...</a></li>\n\t<li><a href="#">...</a></li>\n</ul>\n',
-    "navlist":'<ul class="nav nav-list">\n<li class="nav-header">List header</li>\n<li class="active"><a href="#">Home</a></li>\n<li><a href="#">Library</a></li>\n...\n</ul>\n',
-    "tabbablenav":'<div class="tabbable">\n<ul class="nav nav-tabs">\n<li class="active"><a href="#tab1" data-toggle="tab">Section 1</a></li>\n<li><a href="#tab2" data-toggle="tab">Section 2</a></li>\n</ul>\n<div class="tab-content">\n<div class="tab-pane active" id="tab1">\n<p>I am in Section 1.</p>\n</div>\n<div class="tab-pane" id="tab2">\n<p>Howdy, I am in Section 2.</p>\n</div>\n</div>\n</div>',
+    "rowhtml":'\n<div class="row-fluid">\n</div>\n',
+    "colhtml1":'\n<div class="span1">\n</div>\n',
+    "colhtml2":'\n<div class="span2">\n</div>\n',
+    "colhtml4":'\n<div class="span4">\n</div>\n',
+    "colhtml6":'\n<div class="span6">\n</div>\n',
+    "subrowhtml":'\n<div class="row-fluid">\n</div>\n',
+    "dropdown":'\n<div class="dropdown">\n<a class="dropdown-toggle" data-toggle="dropdown" href="#">Dropdown trigger</a>\n\t<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">\n\t\t<li><a tabindex="-1" href="#">Action</a></li>\n\t\t<li><a tabindex="-1" href="#">Another action</a></li>\n\t\t<li><a tabindex="-1" href="#">Something else here</a></li>\n\t\t<li class="divider"></li>\n\t\t<li><a tabindex="-1" href="#">Separated link</a></li>\n\t</ul>\n</div>\n',
+    "typography":'\n<div class="hero-unit">\n\t<h1>Heading</h1>\n\t<p>Tagline</p>\n\t<p>\n\t\t<a class="btn btn-primary btn-large">\n\t\tLearn more\n\t\t</a>\n\t</p>\n</div>\n',
+    "navbar":'\n<div class="navbar">\n<div class="navbar-inner">\n<a class="brand" href="#">Title</a>\n<ul class="nav">\n<li class="active">\t\t<a href="#">Home</a></li>\n<li><a href="#">Link</a></li>\n<li><a href="#">Link</a></li>\n</ul>\n</div>\n</div>\n',
+    "buttongroup":'\n<div class="btn-group">\n\t<button class="btn">1</button>\n\t<button class="btn">2</button>\n\t<button class="btn">3</button>\n</div>\n',
+    "tabs":'\n<ul class="nav nav-tabs">\n\t<li class="active">\n\t\t<a href="#">Home</a>\n\t</li>\n\t<li><a href="#">...</a></li>\n\t<li><a href="#">...</a></li>\n</ul>\n',
+    "navlist":'\n<ul class="nav nav-list">\n<li class="nav-header">List header</li>\n<li class="active"><a href="#">Home</a></li>\n<li><a href="#">Library</a></li>\n...\n</ul>\n',
+    "tabbablenav":'\n<div class="tabbable">\n<ul class="nav nav-tabs">\n<li class="active"><a href="#tab1" data-toggle="tab">Section 1</a></li>\n<li><a href="#tab2" data-toggle="tab">Section 2</a></li>\n</ul>\n<div class="tab-content">\n<div class="tab-pane active" id="tab1">\n<p>I am in Section 1.</p>\n</div>\n<div class="tab-pane" id="tab2">\n<p>Howdy, I am in Section 2.</p>\n</div>\n</div>\n</div>',
     "form":'<form class="navbar-form pull-left">\n<input type="text" class="span2">\n<button type="submit" class="btn">Submit</button>\n</form>'
 }
 var inSelectionObject = {};
@@ -142,13 +142,13 @@ jQuery(document).ready(function  ($) {//prevent any conflicts
         */
 //Global Variables
         var $container = $('#main-container');
-        var rowhtml = stringData.rowhtml;
         var maineditor = CodeMirror.fromTextArea(document.getElementById("completeeditor"), {
         mode: {name: "xml", alignCDATA: true},
-        lineNumbers: true
+        lineNumbers: true,
+        lineWrapping:true
         });
 
-        console.log(maineditor);
+        //console.log(maineditor);
         // FROM LIVE VIEW TO CODE
         function  updateCode() {
             //For Updating code of the EDITOR
@@ -168,6 +168,7 @@ jQuery(document).ready(function  ($) {//prevent any conflicts
 
 
       /*END OF CODE <- -> LIVE */
+        var rowhtml = stringData.rowhtml;
         $('#addrowabove').on('click',function  () {
             var $row = $(this);
             $(rowhtml).insertBefore(inSelectionObject.row);
@@ -203,6 +204,24 @@ jQuery(document).ready(function  ($) {//prevent any conflicts
                 inSelectionObject.col.html(itshtml);
             };
         });*/
+        /**CLICKING ON COL*/
+        $container.on('click','[class*="span"]',function  (e) {
+            //e.stopPropagation();
+            var theCol = $('[class*="span"]')[$('[class*="span"]').index(this)];
+            console.log($(theCol));
+            inSelectionObject.col = $(theCol);
+            inControlBox($(theCol),'col');
+            console.log('Col Clicked');
+            updateCode();
+
+        });
+        /**CLICKING ON ROW*/
+        $container.on('click','.row-fluid',function  (e) {
+            if ($(e.target).hasClass('row-fluid')) {//necessary for click position
+                console.log('row Clicked');
+                inControlBox($(this),'row');
+            };
+        });
         $('.addcol').on('click',function  () {
             /*
             * Write function to check whether overflowing
@@ -213,17 +232,6 @@ jQuery(document).ready(function  ($) {//prevent any conflicts
             inSelectionObject.row.append(colhtml);
             console.log(colhtml);
             updateCode();
-        });
-        $container.on('click','[class*="span"]',function  () {
-            inControlBox($(this),'col');
-            console.log('Col Clicked');
-
-        });
-        $container.on('click','.row-fluid',function  (e) {
-            if ($(e.target).hasClass('row-fluid')) {//necessary for click position
-                console.log('row Clicked');
-                inControlBox($(this),'row');
-            };
         });
         $('#increasewidth').on('click',function  () {
             changeWidthThroughClass(inSelectionObject.col,'span',true);

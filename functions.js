@@ -11,7 +11,7 @@ function changeWidthThroughClass ($element,classContains,isIncrease) {
             arrayposition = i;
         };
     });
-    console.log(arrayposition);
+    //console.log(arrayposition);
     if (arrayposition===-1) {//The Given class is not present
         var className = classContains+'0';
     }
@@ -39,18 +39,26 @@ function changeWidthThroughClass ($element,classContains,isIncrease) {
             };
         };
         var newClass = bootstrapClass + lastNumber;
-        console.log(newClass);
+        //console.log('oldclass '+className);
+        //console.log('newclass '+newClass);
+
+        /*Not Working
+        */
         $element.removeClass(className);
         $element.addClass(newClass);
+        console.log($element);
     };
 }
 function selectRow ($element) {
     console.log('row Selected');
 }
+/**Inside The Control Box*/
 function inControlBox ($element,whichElement) {
 
+/**PREVIOUS Control BOXES*/
     if (inSelectionObject.col) {
         inSelectionObject.col.removeClass('inselection');
+        console.log('remove col selection');
     };
     if (inSelectionObject.controlBox) {
         inSelectionObject.controlBox.hide();
@@ -59,18 +67,20 @@ function inControlBox ($element,whichElement) {
         inSelectionObject.row.removeClass('inselection');
         console.log('remove row selection');
     };
+    /**CONTROL BOXES SELECTED*/
     if (whichElement==='row') {
 
         var $optionContainer = $('#rowoptions');
         $('#coloptions').hide();
         inSelectionObject.row = $element;
+
     };
     if (whichElement==='col') {
         var $optionContainer = $('#coloptions');
         $('#rowoptions').hide();
         inSelectionObject.col = $element;
     };
-    console.log(inSelectionObject);
+    console.log(whichElement,inSelectionObject);
     inSelectionObject.controlBox = $optionContainer;
     var offset = $element.offset();
     $optionContainer.show();
@@ -88,12 +98,12 @@ function removeControlBox () {
   inSelectionObject.controlBox.hide();
  }
  function changeDataLength ($row,isIncrease) {
-     var length = parseInt($row.attr('data-length'));
+     /*var length = parseInt($row.attr('data-length'));
      if (isIncrease) {
         length=length+1;
      }
      else{
         length = length -1;
      };
-     $row.attr('data-length',length);
+     //$row.attr('data-length',length);*/
  }
