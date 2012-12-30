@@ -9,11 +9,7 @@ function changeWidthThroughClass ($element,classContains,isIncrease) {
             arrayposition = i;
         };
     });
-<<<<<<< HEAD
-    //console.log(arrayposition);
-=======
 
->>>>>>> index2 working
     if (arrayposition===-1) {//The Given class is not present
         var className = classContains+'0';
     }
@@ -31,49 +27,32 @@ function changeWidthThroughClass ($element,classContains,isIncrease) {
         //console.log(bootstrapClass);
         if (isIncrease) {
             lastNumber = lastNumber +1 ;
+        }
+        else {
+
+        if (lastNumber!==1) {
+            lastNumber = lastNumber - 1;
         } else{
-            if (lastNumber!==1) {
-                lastNumber = lastNumber - 1;
-            } else{
-                console.log('Cannot be Decreased Further . Deleting the element');
-                //function for deleting the element
-            };
+            console.log('Cannot be Decreased Further . Deleting the element');
+            //function for deleting the element
+        };
         };
         var newClass = bootstrapClass + lastNumber;
-        //console.log('oldclass '+className);
-        //console.log('newclass '+newClass);
-<<<<<<< HEAD
-
-        /*Not Working
-        */
-        $element.removeClass(className);
-        $element.addClass(newClass);
-        console.log($element);
-    };
-}
-function selectRow ($element) {
-    console.log('row Selected');
-}
-=======
         $element.removeClass(className);
         $element.addClass(newClass);
         //console.log($element);
     };
 }
->>>>>>> index2 working
+
 /**Inside The Control Box*/
 function inControlBox ($element,whichElement) {
 
 /**PREVIOUS Control BOXES*/
-<<<<<<< HEAD
     if (inSelectionObject.col) {
         inSelectionObject.col.removeClass('inselection');
-        console.log('remove col selection');
     };
-=======
     $('.inselection').removeClass('inselection');
 
->>>>>>> index2 working
     if (inSelectionObject.controlBox) {
         if (inSelectionObject.controlBox.length) {
             inSelectionObject.controlBox.hide();
@@ -92,11 +71,6 @@ function inControlBox ($element,whichElement) {
         $('#rowoptions').hide();
         inSelectionObject.col = $element;
     };
-<<<<<<< HEAD
-    console.log(whichElement,inSelectionObject);
-=======
-
->>>>>>> index2 working
     inSelectionObject.controlBox = $optionContainer;
     var offset = $element.offset();
     $optionContainer.show();
