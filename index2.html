@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="css/codemirror.css">
 </head>
 <body>
-
     <div id="rowoptions" class="optionbox">
          <div class="row">
                 <div class="span12 offset1">
@@ -29,7 +28,7 @@
                 </div>
             </div>
     </div>
-    <div id="coloptions" class="optionbox">
+      <div id="coloptions" class="optionbox">
         <div class="row">
             <div class="span7">
                  <div class="btn-group">
@@ -46,45 +45,27 @@
             </div>
         </div>
     </div>
-    <div id="componentbox" class="optionbox">
-        <div class="container-fluid">
-            <div class="row"><div class="span2 pull-right"><button class="btn closebox" data-id="componentclose"><i class="icon-off"></i>Close</button></div></div>
-            <div class="row-fluid">
-                <div class="span3" id="componentcontainer">
-                    <ul class="thumbnails">
-                        <li class="span4"><button class="btn" id="dropdown">DropDown</button></li>
-                        <li class="span4"><button class="btn" id="navbar">Navbar</button></li>
-                        <li class="span4"><button class="btn" id="typography">Typography</button></li>
-                        <li class="span4"><button class="btn" id="buttongroup">Btn Group</button></li>
-                        <li class="span4"><button class="btn" id="tabs">Tabs</button></li>
-                        <li class="span4"><button class="btn" id="navlist">nav-list</button></li>
-                        <li class="span4"><button class="btn" id="tabbablenav">Tabbable Nav</button></li>
-                        <li class="span4"><button class="btn" id="form">Form</button></li>
-                    </ul>
-                </div>
-                <div class="span5 ">
-                <h4>Code</h4>
-
-                </div>
-                <div class="span4">
-                    <h4>Live View</h4>
-                    <div id="preview"></div>
+    <div id="componentoptions" class="optionbox">
+        <div class="row">
+            <div class="span5">
+                <div class="btn-group">
+                    <button class="btn" data-id="dropdown">DropDown</button>
+                    <button class="btn" data-id="typography">Typography</button>
+                    <button class="btn" data-id="navbar">Navbar</button>
+                    <button class="btn" data-id="buttongroup">buttongroup</button>
                 </div>
             </div>
         </div>
     </div>
-    <!--UpperMargin-->
     <div class="row" id="uppermargin"></div>
-    <!--The VIEW-->
-    <div class="container-fluid">
+        <div class="container-fluid">
         <div class="row-fluid">
             <div class="span4" id="side-column">
 
                     <!--EDITING OF THE CODE-->
                         <form><textarea name="completeeditor" id="completeeditor">
 <div class="row-fluid"></div>
-                                                </textarea></form>
-
+</textarea></form>
             </div>
             <!--LIVE VIEW OF THE CODE-->
             <div class="span6" id="main-container">
@@ -94,7 +75,7 @@
             </div>
         </div>
     </div>
-<script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/codemirror.js"></script>
 <script type="text/javascript" src="js/xml.js"></script>
@@ -103,14 +84,8 @@
 <!--<script type="text/javascript" src="js/css.js"></script>
 <script type="text/javascript" src="js/javascript.js"></script>
 <script type="text/javascript" src="js/htmlmixed.js"></script>-->
-<script type="text/javascript" src="generate.js"></script>
-<script type="text/javascript">
-    var optionJSON = {
-    "popover":{
-        title : "Hey"
-    }
-}
-var stringData = {
+<script>
+    var stringData = {
     "rowhtml":'\n<div class="row-fluid">\n</div>\n',
     "colhtml1":'\n<div class="span1">\n</div>\n',
     "colhtml2":'\n<div class="span2">\n</div>\n',
@@ -128,64 +103,47 @@ var stringData = {
 }
 var inSelectionObject = {};
 </script>
-<script type="text/javascript">
+<script>
+$(document).ready(function  () {
 
-jQuery(document).ready(function  ($) {//prevent any conflicts
-    /*
-    After Going Live
-    $.getJSON('string.json',function  (jsonData) {
-          stringData = jsonData;
-          console.log(stringData);
-        });
-        $.getJSON('options.json',function  (data) {
-            optionData = data;
-        });
-        */
-//Global Variables
         var $container = $('#main-container');
-        var maineditor = CodeMirror.fromTextArea(document.getElementById("completeeditor"), {
-        mode: {name: "xml", alignCDATA: true},
-        lineNumbers: true,
-        lineWrapping:true
-        });
 
-        //console.log(maineditor);
-        // FROM LIVE VIEW TO CODE
-        function  updateCode() {
-            //For Updating code of the EDITOR
-            maineditor.setValue(document.getElementById('main-container').innerHTML);
-        }
-        //FROM CODE TO LIVE VIEW
-        var delay;
-        maineditor.on("change", function() {
-        clearTimeout(delay);
-        delay = setTimeout(updatePreview, 300);
-        });
-        //FUNCTION FOR STRING TO LINE BREAK
-        function updatePreview() {
-            document.getElementById('main-container').innerHTML=maineditor.getValue();
-        }
-        setTimeout(updatePreview, 300);
+        $container.on('click','[class*="span"]',function  (e) {
+        //e.stopPropagation();
+        var theCol = $('[class*="span"]')[$('[class*="span"]').index(this)];
 
+        inSelectionObject.col = $(theCol);
+        inControlBox($(theCol),'col');
 
-      /*END OF CODE <- -> LIVE */
-        var rowhtml = stringData.rowhtml;
-        $('#addrowabove').on('click',function  () {
+        //$(this).hide();
+    });
+    /**CLICKING ON ROW*/
+    $container.on('click','.row-fluid',function  (e) {
+        if ($(e.target).hasClass('row-fluid')) {//necessary for click position
+
+           inControlBox($(this),'row');
+        };
+        inSelectionObject.row = $(this);
+    });
+
+    $('#addrowabove').on('click',function  () {
             var $row = $(this);
-            $(rowhtml).insertBefore(inSelectionObject.row);
+            $(stringData.rowhtml).insertBefore(inSelectionObject.row);
             inControlBox(inSelectionObject.row.prev('.row-fluid'),'row');
-            console.log('Added row Above');
+
         });
         $('#addrowbelow').on('click',function  () {
             var $row = $(this);
-            $(rowhtml).insertAfter(inSelectionObject.row);
+            $(stringData.rowhtml).insertAfter(inSelectionObject.row);
             inControlBox(inSelectionObject.row.next('.row-fluid'),'row');
-            console.log('Added Row Below');
+
         });
         $('#deleterow').on('click',function  () {
             inSelectionObject.row.remove();
             removeControlBox();
-            /*//If-Else Loops to check which row is in ControlBox
+            /*
+            * If-Else Loops to check which row is in ControlBox
+
             if (inSelectionObject.row.next('.row-fluid').length!==0) {//If there is a row below
                 inControlBox(inSelectionObject.row.next('.row-fluid'),'row');
             } else{
@@ -197,98 +155,45 @@ jQuery(document).ready(function  ($) {//prevent any conflicts
             };*/
             console.log('Delete Row Clicked');
         });
-        /*$('.closebox').on('click',function  () {
-            $('.optionbox').hide();
-            $('.inselection').removeClass('inselection');
-            if ($(this).attr('data-id')==='componentclose') {
-                var itshtml = editor.getValue();
-                inSelectionObject.col.html(itshtml);
-            };
-        });*/
-        /**CLICKING ON COL*/
-        $container.on('click','[class*="span"]',function  (e) {
-            //e.stopPropagation();
-            var theCol = $('[class*="span"]')[$('[class*="span"]').index(this)];
-            console.log($(theCol));
-            inSelectionObject.col = $(theCol);
-            inControlBox($(theCol),'col');
-            console.log('Col Clicked');
-            updateCode();
-
-        });
-        /**CLICKING ON ROW*/
-        $container.on('click','.row-fluid',function  (e) {
-            if ($(e.target).hasClass('row-fluid')) {//necessary for click position
-                console.log('row Clicked');
-                inControlBox($(this),'row');
-            };
-        });
-        $('.addcol').on('click',function  () {
+    $('.addcol').on('click',function  () {
             /*
             * Write function to check whether overflowing
             */
             var colLength = parseInt($(this).attr('data-length'));
-            //inSelectionObject.row.attr('data-length',parseInt(inSelectionObject.row.attr('data-length'))+colLength);
             var colhtml = stringData["colhtml"+colLength];
             inSelectionObject.row.append(colhtml);
-            console.log(colhtml);
-            updateCode();
         });
         $('#increasewidth').on('click',function  () {
             changeWidthThroughClass(inSelectionObject.col,'span',true);
-            //changeDataLength(inSelectionObject.col.parent(),true);
-            updateCode();
         });
         $('#decreasewidth').on('click',function  () {
             changeWidthThroughClass(inSelectionObject.col,'span',false);
-            //changeDataLength(inSelectionObject.col.parent(),false);
-            updateCode();
         });
-        $('#addanothercol').on('click',function  () {
+         $('#addanothercol').on('click',function  () {
 
             $(stringData.colhtml1).insertAfter(inSelectionObject.col);
-            updateCode();
-            //changeDataLength(inSelectionObject.col.parent(),true);
         });
         $('#deletecol').on('click',function  () {
             inSelectionObject.col.remove();
             removeControlBox();
-            updateCode();
-            //function to transfer control Box to another Column
         });
         $('#increaseoffset').on('click',function  () {
-            //inSelectionObject.col.remove();
             changeWidthThroughClass(inSelectionObject.col,'offset',true);
-            //changeDataLength(inSelectionObject.col.parent(),true);
-            //function to transfer control Box to another Column
         });
         $('#decreaseoffset').on('click',function  () {
-            //inSelectionObject.col.remove();
             changeWidthThroughClass(inSelectionObject.col,'offset',false);
-            updateCode();
-            //changeDataLength(inSelectionObject.col.parent(),false);
-            //function to transfer control Box to another Column
         });
-        $('#addsubrow').on('click',function  () {
-            //Check
-            var subrowhtml = stringData.subrowhtml;
-            inSelectionObject.col.append(subrowhtml);
+        $('#addcomponent').click(function(){
+            $('.optionbox').hide();
+            $('#componentoptions').show();
         });
-        $('#addcomponent').on('click',function  () {
-            $('#componentbox').show();
-            //var itshtml = inSelectionObject.col.html();
-            //editor.setValue(itshtml);
-        });
-        $('#componentcontainer').on('click','.btn',function  (e) {
-            var componentname = $(this).attr('id');
-            var itshtml = stringData[componentname];
-            console.log(itshtml);
-            //editor.setValue(itshtml);
-            inSelectionObject.col.attr('data-content',itshtml);
-            inSelectionObject.col.html(itshtml);
-        });
+        $('#componentoptions').on('click','.btn',function  () {
 
+            var html = stringData[$(this).attr('data-id')];
+            inSelectionObject.col.append(html);
+            $('#componentoptions').hide();
+            inControlBox(inSelectionObject.col,'col');
+        });
 });
 </script>
-</body>
 </html>
