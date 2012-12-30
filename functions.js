@@ -38,9 +38,9 @@ function changeWidthThroughClass ($element,classContains,isIncrease) {
         };
         };
         var newClass = bootstrapClass + lastNumber;
-        $element.removeClass(className);
         $element.addClass(newClass);
-        //console.log($element);
+        $element.removeClass(className);
+        console.log(newClass);
     };
 }
 

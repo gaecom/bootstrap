@@ -10,11 +10,13 @@ editor.on("change", function() {
 clearTimeout(delay);
 delay = setTimeout(updatePreview, 300);
 });
-
+$('#main-container').on("DOMSubtreeModified",function  () {
+    console.log('update Code');
+});
 function updatePreview() {
             $('#main-container').html(editor.getValue());
 }
 function  updateCode() {
-
-            editor.setValue($('#main-container').html());
+        inSelectionObject.html = style_html($('#main-container').html());
+        editor.setValue(inSelectionObject.html);
 }
