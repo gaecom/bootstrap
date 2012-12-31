@@ -63,7 +63,7 @@
             <div class="span4" id="side-column">
 
                     <!--EDITING OF THE CODE-->
-                        <form><textarea name="completeeditor" id="completeeditor">
+                        <form><textarea class="zc-syntax-xsl zc-use_tab-true zc-pretty_break-true" cols="30" name="completeeditor" id="completeeditor">
 <div class="row-fluid"></div>
 </textarea></form>
             </div>
@@ -76,15 +76,13 @@
         </div>
     </div>
     <script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/codemirror.js"></script>
-<script type="text/javascript" src="js/xml.js"></script>
-<script type="text/javascript" src="functions.js"></script>
-<!--USED FOR HTML-MIXED-->
-<!--<script type="text/javascript" src="js/css.js"></script>
-<script type="text/javascript" src="js/javascript.js"></script>
-<script type="text/javascript" src="js/htmlmixed.js"></script>-->
-<script>
+<script defer type="text/javascript" src="js/bootstrap.min.js"></script>
+<script defer type="text/javascript" src="js/zen_textarea.min.js"></script>
+<script defer type="text/javascript" src="functions.js"></script>
+<script defer type="text/javascript" src="livesync.js"></script>
+<script defer type="text/javascript" src="js/beautify-html.js"></script>
+
+<script defer>
     var stringData = {
     "rowhtml":'\n<div class="row-fluid">\n</div>\n',
     "colhtml1":'\n<div class="span1">\n</div>\n',
@@ -106,16 +104,15 @@ var inSelectionObject = {};
 <script>
 $(document).ready(function  () {
 
-        var $container = $('#main-container');
+    var $container = $('#main-container');
 
-        $container.on('click','[class*="span"]',function  (e) {
+    $container.on('click','[class*="span"]',function  (e) {
         //e.stopPropagation();
         var theCol = $('[class*="span"]')[$('[class*="span"]').index(this)];
 
         inSelectionObject.col = $(theCol);
         inControlBox($(theCol),'col');
 
-        //$(this).hide();
     });
     /**CLICKING ON ROW*/
     $container.on('click','.row-fluid',function  (e) {
@@ -124,6 +121,7 @@ $(document).ready(function  () {
            inControlBox($(this),'row');
         };
         inSelectionObject.row = $(this);
+
     });
 
     $('#addrowabove').on('click',function  () {
@@ -167,6 +165,7 @@ $(document).ready(function  () {
             changeWidthThroughClass(inSelectionObject.col,'span',true);
         });
         $('#decreasewidth').on('click',function  () {
+
             changeWidthThroughClass(inSelectionObject.col,'span',false);
         });
          $('#addanothercol').on('click',function  () {

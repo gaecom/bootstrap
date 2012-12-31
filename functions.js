@@ -27,26 +27,28 @@ function changeWidthThroughClass ($element,classContains,isIncrease) {
         //console.log(bootstrapClass);
         if (isIncrease) {
             lastNumber = lastNumber +1 ;
+        }
+        else {
+
+        if (lastNumber!==1) {
+            lastNumber = lastNumber - 1;
         } else{
-            if (lastNumber!==1) {
-                lastNumber = lastNumber - 1;
-            } else{
-                console.log('Cannot be Decreased Further . Deleting the element');
-                //function for deleting the element
-            };
+            console.log('Cannot be Decreased Further . Deleting the element');
+            //function for deleting the element
+        };
         };
         var newClass = bootstrapClass + lastNumber;
-        //console.log('oldclass '+className);
-        //console.log('newclass '+newClass);
-        $element.removeClass(className);
         $element.addClass(newClass);
-        //console.log($element);
+        $element.removeClass(className);
     };
+    updateCode();
 }
+
 /**Inside The Control Box*/
 function inControlBox ($element,whichElement) {
 
 /**PREVIOUS Control BOXES*/
+
     $('.inselection').removeClass('inselection');
 
     if (inSelectionObject.controlBox) {
@@ -60,13 +62,13 @@ function inControlBox ($element,whichElement) {
         var $optionContainer = $('#rowoptions');
         $('#coloptions').hide();
         inSelectionObject.row = $element;
+
     };
     if (whichElement==='col') {
         var $optionContainer = $('#coloptions');
         $('#rowoptions').hide();
         inSelectionObject.col = $element;
     };
-
     inSelectionObject.controlBox = $optionContainer;
     var offset = $element.offset();
     $optionContainer.show();
