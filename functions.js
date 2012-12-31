@@ -42,6 +42,7 @@ function changeWidthThroughClass ($element,classContains,isIncrease) {
         $element.removeClass(className);
         console.log(newClass);
     };
+    updateCode();
 }
 
 /**Inside The Control Box*/
