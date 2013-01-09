@@ -1,7 +1,6 @@
 function changeWidthThroughClass ($element,classContains,isIncrease) {
 
     /*Code to find the appropriate className*/
-
     var arrayposition = -1;
     var classNames = $element.attr('class').split(" ");//Array of all Classes
     $(classNames).each(function  (i) {

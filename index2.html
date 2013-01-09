@@ -146,12 +146,67 @@ $(document).ready(function  () {
             };
         }
     });
+    $.contextMenu({
+        selector: '.row-fluid>div',
+        trigger : 'left',
+        build: function($trigger, e) {
+            // this callback is executed every time the menu is to be shown
+            // its results are destroyed every time the menu is hidden
+            // e is the original contextmenu event, containing e.pageX and e.pageY (amongst other data)
+            return {
+                callback: function(key, options) {
+                    inSelectionObject.col = options.$trigger;
+                    console.log.apply(console,inSelectionObject.col);
+                    switch(key)
+                    {
+                    case ">":
+                      increasewidth();
+                      break;
+                    case "<":
+                      decreasewidth();
+                      break;
+                    case "->":
+                      increaseoffset();
+                      break;
+                    case "<-":
+                      decreaseoffset();
+                      break;
+                    default:
+                      console.log("not selected");
+                    }
+                    $trigger.removeClass('context-menu-active');
+                    updateCode();
+                },
+                items: {
+                    ">": {name: "increase width"},
+                    "sep1": "---------",
+                    "<": {name: "decrease width"},
+                    "sep2": "---------",
+                    "->": {name: "increase offset"},
+                    "sep3": "---------",
+                    "<-": {name: "decrease offset"},
+                }
+            };
+        }
+    });
     function addrow () {
          $(stringData.rowhtml).insertBefore(inSelectionObject.row);
             //inControlBox(inSelectionObject.row.prev('.row-fluid'),'row');
     }
     function addcol () {
         inSelectionObject.row.append(stringData["colhtml1"]);
+    }
+    function increasewidth () {
+        changeWidthThroughClass(inSelectionObject.col,'span',true);
+    }
+    function decreasewidth () {
+        changeWidthThroughClass(inSelectionObject.col,'span',false);
+    }
+    function increaseoffset () {
+        changeWidthThroughClass(inSelectionObject.col,'offset',true);
+    }
+    function decreasewidth () {
+        changeWidthThroughClass(inSelectionObject.col,'offset',false);
     }
 });
 </script>
