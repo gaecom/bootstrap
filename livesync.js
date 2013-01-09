@@ -15,6 +15,6 @@ function updatePreview() {
             $('#main-container').html(editor.getValue());
 }
 function  updateCode() {
-
-            editor.setValue($('#main-container').html());
+            var thehtml = style_html($('#main-container').html());
+            editor.setValue(thehtml);
 }

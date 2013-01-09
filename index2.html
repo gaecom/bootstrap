@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="index.css">
     <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" href="css/codemirror.css">
+    <link rel="stylesheet" href="css/jquery.contextMenu.css">
 </head>
 <body>
     <div id="rowoptions" class="optionbox">
@@ -59,29 +60,32 @@
     </div>
     <div class="row" id="uppermargin"></div>
         <div class="container-fluid">
-        <div class="row-fluid">
-            <div class="span4" id="side-column">
+        <div class="row">
+            <div class="span6" id="side-column">
 
                     <!--EDITING OF THE CODE-->
                         <form><textarea name="completeeditor" id="completeeditor">
-<div class="row-fluid"></div>
+<div class="row-fluid"><div class="span2"></div></div>
 </textarea></form>
             </div>
             <!--LIVE VIEW OF THE CODE-->
-            <div class="span6" id="main-container">
+            <div class="span9 offset1" id="main-container">
                 <div class="row-fluid">
                     <div class="span2"></div>
                 </div>
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
 <script defer type="text/javascript" src="js/bootstrap.min.js"></script>
 <script defer type="text/javascript" src="js/codemirror.js"></script>
 <script defer type="text/javascript" src="js/xml.js"></script>
 <script defer type="text/javascript" src="js/emmet.min.js"></script>
 <script defer type="text/javascript" src="functions.js"></script>
 <script defer type="text/javascript" src="livesync.js"></script>
+<script defer type="text/javascript" src="js/jquery.ui.position.js"></script>
+<script defer type="text/javascript" src="js/jquery.contextMenu.js"></script>
+<script defer type="text/javascript" src="js/beautify-html.js"></script>
 <!--USED FOR HTML-MIXED-->
 <!--<script type="text/javascript" src="js/css.js"></script>
 <script type="text/javascript" src="js/javascript.js"></script>
@@ -106,96 +110,41 @@
 var inSelectionObject = {};
 </script>
 <script>
+var row;
 $(document).ready(function  () {
-
-    var $container = $('#main-container');
-
-    $container.on('click','[class*="span"]',function  (e) {
-        //e.stopPropagation();
-        var theCol = $('[class*="span"]')[$('[class*="span"]').index(this)];
-
-        inSelectionObject.col = $(theCol);
-        inControlBox($(theCol),'col');
-
-    });
-    /**CLICKING ON ROW*/
-    $container.on('click','.row-fluid',function  (e) {
-        if ($(e.target).hasClass('row-fluid')) {//necessary for click position
-
-           inControlBox($(this),'row');
-        };
-        inSelectionObject.row = $(this);
-    });
-
-    $('#addrowabove').on('click',function  () {
-            var $row = $(this);
-            $(stringData.rowhtml).insertBefore(inSelectionObject.row);
-            inControlBox(inSelectionObject.row.prev('.row-fluid'),'row');
-
+    //Select Row
+    $.contextMenu({
+            selector: '.row-fluid',
+            trigger : 'left',
+            items: {
+                "addrow": {name: "Add Row"},
+                "sep1": "---------",
+                "addcol": {name: "Add Col", icon: "quit"}
+            },
+            callback: function(key, options) {
+                inSelectionObject.row = options.$trigger;
+                console.log.apply(console,inSelectionObject.row);
+                switch(key)
+                {
+                case "addrow":
+                  addrow();
+                  break;
+                case "addcol":
+                  addcol();
+                  break;
+                default:
+                  console.log("not selected");
+                }
+                updateCode();
+            }
         });
-        $('#addrowbelow').on('click',function  () {
-            var $row = $(this);
-            $(stringData.rowhtml).insertAfter(inSelectionObject.row);
-            inControlBox(inSelectionObject.row.next('.row-fluid'),'row');
-
-        });
-        $('#deleterow').on('click',function  () {
-            inSelectionObject.row.remove();
-            removeControlBox();
-            /*
-            * If-Else Loops to check which row is in ControlBox
-
-            if (inSelectionObject.row.next('.row-fluid').length!==0) {//If there is a row below
-                inControlBox(inSelectionObject.row.next('.row-fluid'),'row');
-            } else{
-                if (inSelectionObject.row.prev('.row').length!==0) {//If there is a row above
-                    inControlBox(inSelectionObject.row.prev('.row-fluid'),'row');
-                } else{
-                    //alert('You will have no rows Left');
-                };
-            };*/
-            console.log('Delete Row Clicked');
-        });
-    $('.addcol').on('click',function  () {
-            /*
-            * Write function to check whether overflowing
-            */
-            var colLength = parseInt($(this).attr('data-length'));
-            var colhtml = stringData["colhtml"+colLength];
-            inSelectionObject.row.append(colhtml);
-        });
-        $('#increasewidth').on('click',function  () {
-            changeWidthThroughClass(inSelectionObject.col,'span',true);
-        });
-        $('#decreasewidth').on('click',function  () {
-
-            changeWidthThroughClass(inSelectionObject.col,'span',false);
-        });
-         $('#addanothercol').on('click',function  () {
-
-            $(stringData.colhtml1).insertAfter(inSelectionObject.col);
-        });
-        $('#deletecol').on('click',function  () {
-            inSelectionObject.col.remove();
-            removeControlBox();
-        });
-        $('#increaseoffset').on('click',function  () {
-            changeWidthThroughClass(inSelectionObject.col,'offset',true);
-        });
-        $('#decreaseoffset').on('click',function  () {
-            changeWidthThroughClass(inSelectionObject.col,'offset',false);
-        });
-        $('#addcomponent').click(function(){
-            $('.optionbox').hide();
-            $('#componentoptions').show();
-        });
-        $('#componentoptions').on('click','.btn',function  () {
-
-            var html = stringData[$(this).attr('data-id')];
-            inSelectionObject.col.append(html);
-            $('#componentoptions').hide();
-            inControlBox(inSelectionObject.col,'col');
-        });
+    function addrow () {
+         $(stringData.rowhtml).insertBefore(inSelectionObject.row);
+            //inControlBox(inSelectionObject.row.prev('.row-fluid'),'row');
+    }
+    function addcol () {
+        inSelectionObject.row.append(stringData["colhtml1"]);
+    }
 });
 </script>
 </html>
