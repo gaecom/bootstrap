@@ -76,21 +76,21 @@
             </div>
         </div>
     </div>
+<script type="text/javascript" src="js/beautify-html.js"></script>
 <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
-<script defer type="text/javascript" src="js/bootstrap.min.js"></script>
-<script defer type="text/javascript" src="js/codemirror.js"></script>
-<script defer type="text/javascript" src="js/xml.js"></script>
-<script defer type="text/javascript" src="js/emmet.min.js"></script>
-<script defer type="text/javascript" src="functions.js"></script>
-<script defer type="text/javascript" src="livesync.js"></script>
-<script defer type="text/javascript" src="js/jquery.ui.position.js"></script>
-<script defer type="text/javascript" src="js/jquery.contextMenu.js"></script>
-<script defer type="text/javascript" src="js/beautify-html.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/codemirror.js"></script>
+<script type="text/javascript" src="js/xml.js"></script>
+<script type="text/javascript" src="js/emmet.min.js"></script>
+<script type="text/javascript" src="functions.js"></script>
+<script type="text/javascript" src="livesync.js"></script>
+<script type="text/javascript" src="js/jquery.ui.position.js"></script>
+<script type="text/javascript" src="js/jquery.contextMenu.js"></script>
 <!--USED FOR HTML-MIXED-->
 <!--<script type="text/javascript" src="js/css.js"></script>
 <script type="text/javascript" src="js/javascript.js"></script>
 <script type="text/javascript" src="js/htmlmixed.js"></script>-->
-<script defer>
+<script>
     var stringData = {
     "rowhtml":'\n<div class="row-fluid">\n</div>\n',
     "colhtml1":'\n<div class="span1">\n</div>\n',
@@ -110,34 +110,42 @@
 var inSelectionObject = {};
 </script>
 <script>
-var row;
+
 $(document).ready(function  () {
     //Select Row
     $.contextMenu({
-            selector: '.row-fluid',
-            trigger : 'left',
-            items: {
-                "addrow": {name: "Add Row"},
-                "sep1": "---------",
-                "addcol": {name: "Add Col", icon: "quit"}
-            },
-            callback: function(key, options) {
-                inSelectionObject.row = options.$trigger;
-                console.log.apply(console,inSelectionObject.row);
-                switch(key)
-                {
-                case "addrow":
-                  addrow();
-                  break;
-                case "addcol":
-                  addcol();
-                  break;
-                default:
-                  console.log("not selected");
+        selector: '.row-fluid',
+        trigger : 'left',
+        build: function($trigger, e) {
+            // this callback is executed every time the menu is to be shown
+            // its results are destroyed every time the menu is hidden
+            // e is the original contextmenu event, containing e.pageX and e.pageY (amongst other data)
+            return {
+                callback: function(key, options) {
+                    inSelectionObject.row = options.$trigger;
+                    console.log.apply(console,inSelectionObject.row);
+                    switch(key)
+                    {
+                    case "addrow":
+                      addrow();
+                      break;
+                    case "addcol":
+                      addcol();
+                      break;
+                    default:
+                      console.log("not selected");
+                    }
+                    $trigger.removeClass('context-menu-active');
+                    updateCode();
+                },
+                items: {
+                    "addrow": {name: "Add Row"},
+                    "sep1": "---------",
+                    "addcol": {name: "Add Col"}
                 }
-                updateCode();
-            }
-        });
+            };
+        }
+    });
     function addrow () {
          $(stringData.rowhtml).insertBefore(inSelectionObject.row);
             //inControlBox(inSelectionObject.row.prev('.row-fluid'),'row');

@@ -18,3 +18,4 @@ function  updateCode() {
             var thehtml = style_html($('#main-container').html());
             editor.setValue(thehtml);
 }
+editor.setValue(style_html(editor.getValue()));
