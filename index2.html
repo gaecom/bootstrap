@@ -117,6 +117,7 @@ $(document).ready(function  () {
         selector: '.row-fluid',
         trigger : 'left',
         build: function($trigger, e) {
+            $trigger.addClass('inselection');
             // this callback is executed every time the menu is to be shown
             // its results are destroyed every time the menu is hidden
             // e is the original contextmenu event, containing e.pageX and e.pageY (amongst other data)
@@ -136,6 +137,7 @@ $(document).ready(function  () {
                       console.log("not selected");
                     }
                     $trigger.removeClass('context-menu-active');
+                    $('.inselection').removeClass('inselection');
                     updateCode();
                 },
                 items: {
@@ -147,34 +149,29 @@ $(document).ready(function  () {
         }
     });
     $.contextMenu({
-        selector: '.row-fluid>div',
+        selector: '[class*="span"]',
         trigger : 'left',
         build: function($trigger, e) {
-            // this callback is executed every time the menu is to be shown
-            // its results are destroyed every time the menu is hidden
-            // e is the original contextmenu event, containing e.pageX and e.pageY (amongst other data)
+            $trigger.addClass('inselection');
             return {
                 callback: function(key, options) {
                     inSelectionObject.col = options.$trigger;
                     console.log.apply(console,inSelectionObject.col);
                     switch(key)
                     {
-                    case ">":
-                      increasewidth();
-                      break;
-                    case "<":
-                      decreasewidth();
-                      break;
-                    case "->":
-                      increaseoffset();
-                      break;
-                    case "<-":
-                      decreaseoffset();
-                      break;
-                    default:
-                      console.log("not selected");
+                        case ">":
+                          increasewidth();break;
+                        case "<":
+                          decreasewidth();break;
+                        case "->":
+                          increaseoffset();break;
+                        case "<-":
+                          decreaseoffset();break;
+                        default:
+                          console.log("not selected");
                     }
                     $trigger.removeClass('context-menu-active');
+                    $trigger.removeClass('inselection');
                     updateCode();
                 },
                 items: {
@@ -191,7 +188,6 @@ $(document).ready(function  () {
     });
     function addrow () {
          $(stringData.rowhtml).insertBefore(inSelectionObject.row);
-            //inControlBox(inSelectionObject.row.prev('.row-fluid'),'row');
     }
     function addcol () {
         inSelectionObject.row.append(stringData["colhtml1"]);
