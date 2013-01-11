@@ -17,9 +17,12 @@ body{overflow-x:hidden;
 width: 30%;
 }
 /**/
+#side-column{
+    height: 38em;
+}
 #uppermargin{
     background-color: transparent;
-    min-height: 50px;
+    min-height: 20px;
 }
 #main-container{
     background-color: white;
