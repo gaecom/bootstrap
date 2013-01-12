@@ -20,8 +20,9 @@ var editor = CodeMirror.fromTextArea(document.getElementById("completeeditor"), 
 });
 
 editor.on("change", function() {
-    clearTimeout(delay);
-    delay = setTimeout(updatePreview, 300);
+    // /clearTimeout(delay);
+    //delay = setTimeout(updatePreview, 300);
+    updatePreview();
     highlightPreview();
 });
 
