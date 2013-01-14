@@ -27,15 +27,8 @@ width: 30%;
 #main-container{
     background-color: white;
 }
-.optionbox{
-    display: none;
-    z-index: 9999;
-    position: fixed;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    width: 80%;
-}
+
+
 #rowoptions>.row{
     background-color: darkgrey;
 }
@@ -75,6 +68,7 @@ margin-left: 0;
     height: 100%;
     background: rgba(0,0,0,0.7);
 }
+.activeline {background: #e8f2ff !important;}
 #componentbox>.container-fluid{
 margin-top: 3%;
 background: rgba(0,0,0,0.2);

@@ -12,7 +12,7 @@
     <div id="componentoptions">
         <div class="row">
             <div class="span5">
-                <div class="btn-group">
+                <div class="btn-group ">
                     <button class="btn" data-id="dropdown">DropDown</button>
                     <button class="btn" data-id="typography">Typography</button>
                     <button class="btn" data-id="navbar">Navbar</button>
@@ -46,7 +46,7 @@
 <script type="text/javascript" src="js/codemirror.js"></script>
 <script type="text/javascript" src="js/xml.js"></script>
 <script type="text/javascript" src="js/emmet.min.js"></script>
-<script src="js/foldcode.js"></script>
+<script type="text/javascript" src="js/foldcode.js"></script>
 <script type="text/javascript" src="functions.js"></script>
 <script type="text/javascript" src="livesync.js"></script>
 <script type="text/javascript" src="js/jquery.ui.position.js"></script>
@@ -172,6 +172,26 @@ $(document).ready(function  () {
     function decreaseoffset () {
         changeWidthThroughClass(inSelectionObject.col,'offset',false);
     }
+    $('#componentoptions').on("click",".btn",function  () {
+        var insertAt;
+        var cursor = editor.getCursor();
+        var prevLine = editor.getLine(cursor.line);
+        var start = prevLine.substring(0,cursor.ch);
+        console.log(start);
+        var found = start.match(/span./);//If the div tag has a class of span
+        console.log(found[0]);
+        if (found!==null) {
+            var l=start.indexOf('">')+2;
+            start = prevLine.substring(0,l);
+            var html = stringData[$(this).attr('data-id')];
+            var end = prevLine.substring(l,prevLine.length);
+            console.log(html);
+            html = style_html(start+html+end,{'indent_size': 1});
+            console.log(html);
+            editor.setLine(cursor.line, start+html+end);
+        };
+
+    });
 });
 </script>
 </html>

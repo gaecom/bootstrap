@@ -20,20 +20,33 @@ var editor = CodeMirror.fromTextArea(document.getElementById("completeeditor"), 
 });
 
 editor.on("change", function() {
-    // /clearTimeout(delay);
+    //clearTimeout(delay);
     //delay = setTimeout(updatePreview, 300);
     updatePreview();
     highlightPreview();
 });
 
 editor.on("gutterClick", foldFunc_html);
-editor.setValue(style_html(editor.getValue(),{'indent_size': 1}));
 
+editor.setValue(style_html(editor.getValue(),{'indent_size': 1}));//Initial
+
+var hlLine = editor.addLineClass(0, "background", "activeline");
+
+editor.on("cursorActivity", function() {
+    highlightPreview();
+    var cur = editor.getLineHandle(editor.getCursor().line);
+    if (cur != hlLine) {
+    editor.removeLineClass(hlLine, "background", "activeline");
+    hlLine = editor.addLineClass(cur, "background", "activeline");
+    }
+});
 function updatePreview() {
     $('#main-container').html(editor.getValue());
 }
 function  updateCode() {
-    var thehtml = style_html($('#main-container').html(),{'indent_size': 1});
+    var thehtml = $('#main-container').html();
+    thehtml = thehtml.replace("inselection","");
+    thehtml = style_html(thehtml,{'indent_size': 1});
     editor.setValue(thehtml);
 }
 function highlightPreview() {
@@ -47,33 +60,50 @@ function highlightPreview() {
 
             if (found!==undefined) {
                 var classname = findClassName(found);
-                console.log(classname);
+                //console.log(classname);
                 var numberbefore = findbeforeClass(classname,found);
-                $($('#main-container').find('.'+classname).get(numberbefore)).addClass('inselection');
+                //console.log(numberbefore);
+                var $element = $('#main-container').find('.'+classname).get(numberbefore);
+                //console.log($element);
+                $($element).addClass('inselection');
             };
         });
     };
 }
 function findbeforeClass  (classname,found) {
+    //console.log(found);
+    var flag = true;
     if (found.line===0) {
         return 0;
     }
     else{
-        lineNumber = found.line - 1;
+        lineNumber = found.line;
         var number=0;
         while(lineNumber!==0)
         {
-            var k = editor.getLine(lineNumber).indexOf(classname);
+            if (flag) {//Only do this for the Cursor line
+                var substring = editor.getLine(lineNumber).substring(0,found.ch);
+                var k = substring.indexOf(classname);
+                flag=false;
+            }
+            else
+            {
+                var k = editor.getLine(lineNumber).indexOf(classname);
+            };
             if (k!==-1) {
                 number=number+1;
             };
             lineNumber=lineNumber-1;
-        }
+        };
+        if (classname==='row-fluid') {
+            number=number+1;
+        };
+        //console.log(number);
         return number;
     };
 }
 function findClassName (found) {
-    console.log(found);
+    //console.log(found);
     var classstring = editor.getLine(found.line).substring(found.ch,editor.getLine(found.line).length);
     var rowfound = classstring.indexOf('row-fluid');
     if (rowfound!==-1) {
@@ -83,15 +113,15 @@ function findClassName (found) {
         if (k!==null) {
             return classstring.match(/span./)[0];
         } else{
-            console.log("Notfound");
+            //console.log("Notfound");
         };
     };
 }
 function findTag (line,ch) {
 
-    shortenedLine = line.substring(0,ch);
-    divtag = shortenedLine.lastIndexOf('<div');
-    enddivtag = shortenedLine.lastIndexOf('</div>');
+    shortenedLine = line.substring(0,ch);//console.log(shortenedLine);
+    divtag = shortenedLine.lastIndexOf('<div');//console.log(divtag);
+    enddivtag = shortenedLine.lastIndexOf('</div>');//console.log(enddivtag);
     if (divtag===-1 && enddivtag ===-1) { // None Are Present
         //ITS THE FIRST LINE
         if (lineNumber===0) {
@@ -106,11 +136,11 @@ function findTag (line,ch) {
     }
     else if (divtag>enddivtag && stack.length===0) {//<div> occurs
         // This Divtag is the one we are looking for  //
-        console.log('FOUND at '+divtag);
+        //console.log('FOUND at '+divtag);
         found = {};//Object to be Returned
         found.line=lineNumber;
         found.ch=divtag;
-        console.log(found);
+        //console.log(found);
         return found;
         // END THE LOOP //
     }
