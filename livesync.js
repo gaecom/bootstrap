@@ -7,6 +7,7 @@ var enddivtag;
 var lineNumber;
 var stack=[];
 var found ={};
+var current;
 var editor = CodeMirror.fromTextArea(document.getElementById("completeeditor"), {
     mode: "text/html",
     lineNumbers: true,
@@ -30,7 +31,7 @@ editor.on("gutterClick", foldFunc_html);
 
 editor.setValue(style_html(editor.getValue(),{'indent_size': 1}));//Initial
 
-var hlLine = editor.addLineClass(0, "background", "activeline");
+var hlLine = editor.addLineClass(0, "background", "activeline");//HighLight First Line
 
 editor.on("cursorActivity", function() {
     highlightPreview();
@@ -49,6 +50,7 @@ function  updateCode() {
     thehtml = style_html(thehtml,{'indent_size': 1});
     editor.setValue(thehtml);
 }
+current = $('#main-container').find('row-fluid').first();
 function highlightPreview() {
     stack=[];
     var cursorObject = editor.getCursor();
@@ -64,8 +66,14 @@ function highlightPreview() {
                 var numberbefore = findbeforeClass(classname,found);
                 //console.log(numberbefore);
                 var $element = $('#main-container').find('.'+classname).get(numberbefore);
+                $element = $($element);//jQuery
+                if ($element != current)
+                {
+                    current.removeClass('inselection');
+                    $element.addClass('inselection');
+                    current = $element;
+                }
                 //console.log($element);
-                $($element).addClass('inselection');
             };
         });
     };
